@@ -1,0 +1,97 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+
+			<!-- prevent sideways scrolling-->
+			<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+			<!--
+			<meta name="viewport" content="width=device-width, initial-scale=1">-->
+			<meta charset="utf-8">
+			<title>Museum Story & Object Browser</title>
+
+			<!-- CSS -->
+			<!-- load bootstrap (bootswatch version) -->
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/style.css">
+
+			<link rel="stylesheet" href="css/app.css">
+			<link rel="stylesheet" href="css/animations.css">
+			<link rel="stylesheet" href="css/responsive.css">
+			<link href="css/one-page-wonder.css" rel="stylesheet">
+			<link  href="css/deck-grid.css" rel="stylesheet"> <!-- 3 KB -->
+
+			<link rel="stylesheet" href="css/normalize.css">
+
+			<link rel="stylesheet" href="css/timeline.css">
+			<link rel="stylesheet" href="bower_components/angulargrid/demo/performantScroll/css/normalize.css">
+			<link rel='stylesheet prefetch' href='css/angular-material.css'>
+			<link rel="stylesheet" href="bower_components/angulargrid/demo/performantScroll/css/style.css">
+			<link  href="css/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+
+
+
+			<!-- JS -->
+			<!-- load angular, ngRoute, ngAnimate -->
+
+			<script src="bower_components/jquery/dist/jquery.js"></script>
+			<script src="bower_components/angular/angular.js"></script>
+			<script src="bower_components/angular-animate/angular-animate.js"></script>
+
+
+
+
+			<script src="bower_components/angular-route/angular-route.js"></script>
+			<script src="bower_components/angular-resource/angular-resource.js"></script>
+			<script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+			<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+
+			<script src="bower_components/ng-scrollbar/dist/ng-scrollbar.min.js"></script>
+			<script src="bower_components/angular-pinch-zoom/dist/ng-pinch-zoom.min.js"></script>
+			<script src="bower_components/angular-timelinejs3/dist/js/ng-timeline.js"></script>
+			<script src="bower_components/timeline/timelineJS.js"></script>
+			<script src="bower_components/angulargrid/angulargrid.min.js"></script>
+			<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+
+			<script src="bower_components/angular-route/angular-route.js"></script>
+
+
+			<!-- Angular Material Javascript now available via Google CDN; version 1.0.7 used here -->
+			<script src="bower_components/angular-material/angular-material.js"></script>
+			<script src="bower_components/ap.fotorama/fotorama.js"></script> <!-- 16 KB -->
+
+
+			<script src="bower_components/underscore/underscore.js"></script>
+			<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+			<script src="bower_components/fuse.js/src/fuse.min.js"></script>
+
+			<script src="bower_components/angular-resource/angular-resource.js"></script>
+			<script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+			<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+			<script src="bower_components/ng-scrollbar/dist/ng-scrollbar.min.js"></script>
+
+
+			<script src="js/app.js"></script>
+			<script src="js/kiosk-tweaks.js"></script>
+			<script src="js/animations.js"></script>
+			<script src="js/controllers.js"></script>
+			<script src="js/slideshow-controller.js"></script>
+			<script src="js/timeline-controller.js"></script>
+			<script src="js/details-controller.js"></script>
+			<script src="js/list-controller.js"></script>
+			<script src="js/grid-controller.js"></script>
+			<script src="js/screensaver-controller.js"></script>
+			<script src="js/screensaver-images.js"></script>
+			<script src="js/filters.js"></script>
+			<script src="js/services.js"></script>
+			<script src="js/directives.js"></script>	
+							
+</head>
+<body ng-app="animateApp">  
+
+	<div  class="view-container">
+		
+		<div   ng-click="screensaverOff()"  autoscroll="true" class="page {{ pageClass }}" ng-view></div>	
+	</div>       
+</body>
+</html>
