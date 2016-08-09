@@ -1,0 +1,40 @@
+
+<div  ng-click="screensaverOff()" ng-controller="gridCtrl as vm" ng-cloak="" ng-app="app" layout="column" layout-fill>
+<div  ng-hide="screensaver_on" ng-hide="currentPath === '/'"  ng-include="'html/menu.html'"></div>
+	
+	
+	
+  <md-content id="content-scroller" >
+
+  
+        <div
+             class="cards-wrap"
+             angular-grid="vm.shots"
+			 autoscroll="true"
+             ag-grid-width="300"
+             ag-performant-scroll="true"
+             ag-gutter-size="12"
+             ag-id="shots"
+             ag-infinite-scroll="vm.loadMoreShots()"
+             >
+          <div class="card" ng-repeat="shot in vm.shots track by $index">
+		  <a ng-click="screensaverOff()" href='#id/{{shot.id}}' >
+            <div class="img" style="background-image: url({{::shot.images.normal}});"></div>
+            <div class="inside">
+              <h3>{{::shot.title}}</h3>
+              <div class="description" ng-bind-html="::shot.description | unsafe"></div>
+            </div>
+		</a>
+          </div>
+        </div>
+        <div class="loading-more-indicator" ng-show="vm.loadingMore">
+          <md-progress-circular md-mode="indeterminate" md-diameter="64" class="progress-swatch"></md-progress-circular>
+        </div>
+
+  </md-content>
+
+</div>
+
+
+
+

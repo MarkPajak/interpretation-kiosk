@@ -1,0 +1,26 @@
+<div  ng-hide="screensaver_on" ng-hide="currentPath === '/'"  ng-include="'html/menu.html'"></div>
+
+<div class="demo">
+ 
+  <div class="timeline-wrapper">
+    <timeline control="timeline" height="500" options="options"></timeline>
+  </div>
+
+  <md-toolbar class="md-whiteframe-z2">
+    <div class="md-toolbar-tools">
+
+	 <form novalidate> 
+				<select  ng-disabled="field.selectable"   ng-change="artist_timelineUpdate(artist_listType)"  id="artistSelect_list" class="form-control"  ng-options="item as item.name  for item in artists | orderBy:'name'" ng-model="artist_listType" class="selectpicker">
+				  <option  value=""></option>
+				</select>
+	
+</form>
+	<button class="btn btn-secondary"  ng-click="timeline.goToPrev()">Previous slide</button>
+	<button class="btn btn-secondary"  ng-click="timeline.goToNext()">Next slide</button>
+	
+	
+
+  </div>
+ </md-toolbar>
+
+</div>
