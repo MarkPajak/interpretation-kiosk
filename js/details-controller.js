@@ -18,9 +18,19 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 				
    $scope.go = function ( path ) {
 	  screen_saver_loop.screensaverOff()
-		$location.path( path );
+		$location.path( path +"/"+$routeParams.kiosk);
 };
 
+
+
+$scope.kiosk=$routeParams.kiosk
+kiosk=$routeParams.kiosk
+$scope.functionThatReturnsStyle = function() {
+kiosk=$scope.kiosk
+var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
+
+     return  color
+}
 						$scope.pagenav = function(next_prev,firstLoad) {
 								
 								var museum_object_id = productService.getProduct_id(next_prev,$routeParams.museum_objectId)
@@ -58,11 +68,11 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 												
 												})
 												$scope.childlinks=child_id_string
-												  $scope.go = function ( path ) {
-													    screen_saver_loop.screensaverOff()
-	
-  $location.path( path );
+   $scope.go = function ( path ) {
+	  screen_saver_loop.screensaverOff()
+		$location.path( path +"/"+$routeParams.kiosk);
 };
+
 
 												  $scope.goSlideshow = function ( path ) {
 													

@@ -29,7 +29,7 @@ animateApp.config(['$routeProvider',
         templateUrl: 'html/screensaver.html',
         controller: 'screen_saver_images'
       }).
-	   when('/list', {
+	   when('/list/:kiosk', {
             templateUrl: 'html/museum_object-list.html',
         controller: 'museum_objectListCtrl'
       }).
@@ -46,22 +46,15 @@ animateApp.config(['$routeProvider',
         controller: 'slideshowCtrl'
       }).
 	  when('/slideshow', {
-        templateUrl: 'html/slideshow.html',
+        templateUrl: 'html/slideshow.html/:kiosk',
         controller: 'slideshowCtrl'
       }).
-      when('/id/:museum_objectId/:link', {
+      
+	  when('/id/:museum_objectId/:kiosk', {
         templateUrl: 'html/museum_object-detail.html',
         controller: 'museum_objectDetailCtrl'
-      }).
-	  when('/id/:museum_objectId', {
-        templateUrl: 'html/museum_object-detail.html',
-        controller: 'museum_objectDetailCtrl'
-      }).
-	    when('/id/:museum_objectId', {
-        templateUrl: 'html/museum_object-detail.html',
-        controller: 'museum_objectDetailCtrl'
-      }).
-	  when('/timeline', {
+      })
+	  .when('/timeline/:kiosk', {
         templateUrl: 'html/timeline.html',
         controller: 'timelineCtrl'
       }).
@@ -69,15 +62,18 @@ animateApp.config(['$routeProvider',
          templateUrl: 'html/timeline.html',
         controller: 'timelineCtrl'
       }).
-	    when('/grid/:type', {
+	    when('/grid/:type/:kiosk', {
          templateUrl: 'html/grid.html',
         controller: 'gridCtrl'
       }).	  
-	    when('/', {
+	    when('/:kiosk', {
          templateUrl: 'html/screensaver.html',
         controller: 'screen_saver'
       }).
-	  
+	   when('/', {
+         templateUrl: 'html/screensaver.html',
+        controller: 'screen_saver'
+      }).
 	  
 	  
       otherwise({

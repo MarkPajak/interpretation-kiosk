@@ -4,10 +4,19 @@ museum_objectcatControllers.controller('slideshowCtrl',
 										'museum_object_index','screen_saver_loop','$location', '$interval','$rootScope',
 		function($scope,  $routeParams,museum_object,screen_saver_loop,$location, $interval,$rootScope) {
 		
-			 $scope.go = function ( path ) {
-				  $location.path( path );
-			 };
-				
+			 $scope.kiosk=$routeParams.kiosk||"PPL-CR-ICT05"
+kiosk=$routeParams.kiosk
+$scope.functionThatReturnsStyle = function() {
+kiosk=$scope.kiosk
+var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
+
+     return  color
+}
+
+   $scope.go = function ( path ) {
+	  screen_saver_loop.screensaverOff()
+		$location.path( path +"/"+$routeParams.kiosk);
+};
 
 			$scope.screensaverOff = function() {
 				console.log('screensaveroff')

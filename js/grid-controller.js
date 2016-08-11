@@ -18,13 +18,22 @@ function($scope, $http, $q,$routeParams,museum_object_index,
 										productService,  $location, $interval,$rootScope,screen_saver_loop) {
   var vm = this;
   
-  
- 
-	    $scope.pageClass = 'page-about';
+$scope.kiosk=$routeParams.kiosk
+kiosk=$routeParams.kiosk
+$scope.functionThatReturnsStyle = function() {
+kiosk=$scope.kiosk
+var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
+
+     return  color
+}
+	    
+		
+		
+$scope.pageClass = 'page-about';
 	  
   
-   
-   
+  
+  
   $scope.card = {};
   $scope.card.title = 'test';
   vm.page = 0;
@@ -33,11 +42,10 @@ function($scope, $http, $q,$routeParams,museum_object_index,
 	  screen_saver_loop.screensaverOff()
 		
 };
-  $scope.go = function ( path ) {
+   $scope.go = function ( path ) {
 	  screen_saver_loop.screensaverOff()
-		$location.path( path );
+		$location.path( path +"/"+$routeParams.kiosk);
 };
-
   
   vm.loadingMore = false;
   	$scope.artists = artist_list.query_index();

@@ -21,7 +21,14 @@ function($scope, $http, $q,$routeParams,$location,museum_object_index,
 										) {
   var vm = this;
   
+$scope.kiosk=$routeParams.kiosk||"PPL-CR-ICT05"
+kiosk=$routeParams.kiosk
+$scope.functionThatReturnsStyle = function() {
+kiosk=$scope.kiosk
+var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 
+     return  color
+}
   $scope.card = {};
    $scope.pageClass = 'page-contact';		
   $scope.card.title = 'test';
@@ -124,9 +131,9 @@ function($scope, $http, $q,$routeParams,$location,museum_object_index,
    screen_saver_loop.start_screen_saver();
   }
 
-  $scope.go = function ( path ) {
+   $scope.go = function ( path ) {
 	  screen_saver_loop.screensaverOff()
-		$location.path( path );
+		$location.path( path +"/"+$routeParams.kiosk);
 };
 
    $scope.screensaverOff = function (  ) {

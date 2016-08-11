@@ -1,11 +1,13 @@
 museum_objectcatControllers.controller('museum_objectListCtrl', ['$scope', 
 																'$filter',
+																'$routeParams',
 																'museum_object_index',
 																'museum_objects_by_artist',
 																'artist_list','gallery_list',
 																'$debounce','productService','screen_saver_loop','$location',
   function($scope, 
 			$filter,
+			$routeParams,
 			museum_object,
 			museum_objects_by_artist,
 			artist_list,
@@ -13,10 +15,20 @@ museum_objectcatControllers.controller('museum_objectListCtrl', ['$scope',
 			$debounce,
 			productService,screen_saver_loop,$location) {
 				
-				  $scope.go = function ( path ) {
+$scope.kiosk=$routeParams.kiosk||"PPL-CR-ICT05"
+kiosk=$routeParams.kiosk
+$scope.functionThatReturnsStyle = function() {
+kiosk=$scope.kiosk
+var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
+
+     return  color
+}
+
+   $scope.go = function ( path ) {
 	  screen_saver_loop.screensaverOff()
-		$location.path( path );
+		$location.path( path +"/"+$routeParams.kiosk);
 };
+
 
 
      $scope.pageClass = 'page-about';	

@@ -1,5 +1,5 @@
   
-  museum_objectcatControllers.controller('timelineCtrl', ['$scope', '$timeout','timeline_service' ,
+  museum_objectcatControllers.controller('timelineCtrl', ['$scope', '$timeout','$routeParams','timeline_service' ,
 																			'museum_object_index',
 																			"productService",
 																			"artist_list",
@@ -10,6 +10,7 @@
 																			
 																			function ($scope, 
 																			$timeout,
+																			$routeParams,
 																			timeline_service,
 																			museum_object_index,
 																			productService,
@@ -34,11 +35,19 @@
 					 
     };
 	
-  $scope.go = function ( path ) {
+$scope.kiosk=$routeParams.kiosk||"PPL-CR-ICT05"
+kiosk=$routeParams.kiosk
+$scope.functionThatReturnsStyle = function() {
+kiosk=$scope.kiosk
+var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
+
+     return  color
+}
+
+   $scope.go = function ( path ) {
 	  screen_saver_loop.screensaverOff()
-		$location.path( path );
+		$location.path( path +"/"+$routeParams.kiosk);
 };
-	
 	
     $scope.$watch('artist', function(newValue, oldValue) {
     if (newValue === oldValue) { return; }
