@@ -17,7 +17,7 @@
              >
          
 		 <div class="a-card" ng-repeat="shot in vm.shots track by $index">
-		  <a ng-click="screensaverOff()"   href='#id/{{shot.id}}' > 
+		  <a ng-click="screensaverOff()"   href='#id/{{shot.id}}/{{kiosk}}' > 
             <img class="imgx"src="{{shot.images.normal}}"></img>
            </a>
           </div>

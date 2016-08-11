@@ -2,17 +2,17 @@
 
 .menuButtons {
     text-align: center;
-
+    background: #eeeeee;
 }
 </style>
 <div class=" menuButtons  panel-default">
   <div class="panel-body">
 
-<button ng-click="go('/home'); screensaverOff();" "  class="btn btn-primary btn-lg">Browse</button>
-<button ng-click="go('/grid/story');screensaverOff()" type="stories" class="btn btn-primary btn-lg">Stories</button>
-<button ng-click="go('/grid/object');screensaverOff()"  type="objects"  class="btn btn-primary btn-lg">Objects</button>
-<button ng-click="go('timeline');screensaverOff()"  class="btn btn-primary btn-lg">Timeline</button>
-<button ng-click="go('/list');screensaverOff()"  class="btn btn-primary btn-lg">List</button>
-<button id="childlinks" ng-click="goSlideshow('/slideshow{{childlinks}}');screensaverOff()"  class="btn btn-primary btn-lg">Slideshow</button>
+<button    style="{{functionThatReturnsStyle()}}" ng-click="go('/'); screensaverOff();" "  class="btn btn-primary btn-lg">Browse</button>
+<button   style="{{functionThatReturnsStyle()}}"  ng-click="go('/grid/story');screensaverOff()" type="stories" class="btn btn-primary btn-lg">Stories</button>
+<button   style="{{functionThatReturnsStyle()}}"  ng-click="go('/grid/object');screensaverOff()"  type="objects"  class="btn btn-primary btn-lg">Objects</button>
+<button   style="{{functionThatReturnsStyle()}}"  ng-click="go('timeline');screensaverOff()"  class="btn btn-primary btn-lg">Timeline</button>
+<button   style="{{functionThatReturnsStyle()}}" ng-click="go('/list');screensaverOff()"  class="btn btn-primary btn-lg">List</button>
+<button style="{{functionThatReturnsStyle()}}" id="childlinks"  ng-click="goSlideshow('/slideshow{{childlinks}}');screensaverOff()"  class="btn btn-primary btn-lg">Slideshow</button>
   </div>
 </div>
