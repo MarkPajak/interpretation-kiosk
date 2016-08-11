@@ -109,6 +109,6 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 						
 						}
 						$scope.add_nav_buttons()
-							
+							makeTextDraggable('content-scroller');	
 						
 }]);
