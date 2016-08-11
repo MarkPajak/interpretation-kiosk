@@ -13,7 +13,6 @@ src: url('webfonts/2E10A6_1_0.eot');
 src: url('webfonts/2E10A6_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E10A6_1_0.woff2') format('woff2'),url('webfonts/2E10A6_1_0.woff') format('woff'),url('webfonts/2E10A6_1_0.ttf') format('truetype');}
 
 */
-
 body {
 /*cursor:none!important;*/
 /*cursorxxx:url(../images/cursor.png), none!important;*/
@@ -23,6 +22,39 @@ body {
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
+  background: #eeeeee !important;
+}
+.tl-slidenav-previous .tl-slidenav-icon
+{
+    -webkit-transform: rotate(+180deg);
+    padding: 10px;
+    position: absolute;
+    right: 40px;
+    top: -230px;
+    transform: rotate(+180deg);
+    width: 195px;
+    background-repeat: no-repeat no-repeat;
+    background-image: url('../img/arrows.png');
+    height: 200px;
+    background-size: 70px;
+    border: none;
+}
+		
+
+
+.tl-slidenav-next .tl-slidenav-icon
+{
+
+  padding: 10px;
+    position: absolute;
+    right: -130px;
+    top: -100px;
+    width: 195px;
+    background-repeat: no-repeat no-repeat;
+    background-image: url('../img/arrows.png');
+    height: 200px;
+    background-size: 70px;
+    border: none;
 }
 
 md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
@@ -34,10 +66,7 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 padding:15px;
 }
 
-body,.view-container {
-  background:white !important;
 
-}
 
 @font-face {
   font-family: 'AvantGardeGothicITCW01Bk-Med';
@@ -136,7 +165,7 @@ img.museum_object {
   margin-right: 3em;
   margin-bottom: 2em;
 
-  padding: 2em;
+ /* padding: 2em;*/
   height: auto;
   width: 400px;
   display: none;
