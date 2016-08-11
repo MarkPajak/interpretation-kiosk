@@ -26,6 +26,12 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 
      return  color
 }
+$scope.changeheadingcolor = function() {
+kiosk=$scope.kiosk
+var color="color:"+ set_color_by_kiosk(kiosk)+";"
+
+     return  color
+}
 	    
 		
 		

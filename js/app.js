@@ -41,7 +41,7 @@ animateApp.config(['$routeProvider',
         templateUrl: 'html/slideshow.html',
         controller: 'slideshowCtrl'
       }).
-	  when('/slideshow/ids/:ids', {
+	  when('/slideshow/ids/:ids/:kiosk', {
         templateUrl: 'html/slideshow.html',
         controller: 'slideshowCtrl'
       }).

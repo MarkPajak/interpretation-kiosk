@@ -6,12 +6,22 @@ museum_objectcatControllers.controller('slideshowCtrl',
 		
 			 $scope.kiosk=$routeParams.kiosk||"PPL-CR-ICT05"
 kiosk=$routeParams.kiosk
+$scope.kiosk=$routeParams.kiosk
+kiosk=$routeParams.kiosk
 $scope.functionThatReturnsStyle = function() {
 kiosk=$scope.kiosk
-var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
+var color="background-color:"+ set_color_by_kiosk(kiosk)+" !important;"
 
      return  color
 }
+$scope.changeheadingcolor = function() {
+kiosk=$scope.kiosk
+
+var color="color:"+ set_color_by_kiosk(kiosk)+";"
+
+     return  color
+}
+	 
 
    $scope.go = function ( path ) {
 	  screen_saver_loop.screensaverOff()
@@ -149,6 +159,8 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 														
 												if(value.video) {
 														img["video"] =  dir+"assets/videos/"+value.video.video+".mp4";
+														
+
 												}
 												if(value.audio) {
 														var audiohtml='<div data-img:"'+dir+'/assets/' + value.image + '_detail.jpg">';
