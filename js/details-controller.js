@@ -9,20 +9,16 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 																   "load_object_record",
 																   "record_id",'$location','$interval','$rootScope','screen_saver_loop',
   function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop) {
-  $scope.screensaver_on=false
+						$scope.screensaver_on=false
 						$scope.labels="labels"
 						$scope.directory=dir
 						$scope.firstOne=true;
 						$scope.lastOne=true;
 						$scope.pageClass = 'page-about';	
 				
-   $scope.go = function ( path ) {
-	  screen_saver_loop.screensaverOff()
-		$location.path( path +"/"+$routeParams.kiosk);
-};
+ 
 
-
-
+$scope.novideo=true
 $scope.kiosk=$routeParams.kiosk
 kiosk=$routeParams.kiosk
 $scope.functionThatReturnsStyle = function() {
@@ -68,10 +64,10 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 												
 												})
 												$scope.childlinks=child_id_string
-   $scope.go = function ( path ) {
-	  screen_saver_loop.screensaverOff()
-		$location.path( path +"/"+$routeParams.kiosk);
-};
+												   $scope.go = function ( path ) {
+													  screen_saver_loop.screensaverOff()
+														$location.path( path +"/"+$routeParams.kiosk);
+													};
 
 
 												  $scope.goSlideshow = function ( path ) {
@@ -84,7 +80,31 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 								$scope.setImage = function(imageUrl) {
 									$scope.mainImageUrl = imageUrl.image;
 									$scope.museum_object.description = imageUrl.description;
+									
 								};
+								
+								angular.forEach(museum_object.video, function(object_media) {
+								$scope.novideo=false
+								$scope.video_button_style = function() {
+									kiosk=$scope.kiosk
+									
+									style="position: absolute;width: 86px;	height: 96px;right: 20%;top: 4%;margin-left: -48px;margin-top: -48px;background-position: 0 -64px;z-index: 500;cursor: pointer;background: url(img/fotorama.png) no-repeat;	-webkit-tap-highlight-color: transparent;-webkit-user-select: none;	-moz-user-select: none;-ms-user-select: none;user-select: none;background-size: 100px;background-position-x: -10px;background-position-y: -70PX;"
+									
+									
+								
+
+										 return  style
+									}
+								 $scope.go_video = function (  ) {
+								
+													  screen_saver_loop.screensaverOff()
+													 $location.path( '/slideshow/ids/'+museum_object.id );
+													};
+													return false
+								})
+								
+								
+								
 							makeTextDraggable('content-scroller');	
 						})
 						
