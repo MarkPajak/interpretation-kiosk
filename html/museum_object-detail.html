@@ -11,6 +11,29 @@ color:blue !important;
 .container{
 background-color:white;
 }
+.play_button{
+    position: absolute;
+    width: 86px;
+    height: 96px;
+    right: 20%;
+    top: 4%;
+    margin-left: -48px;
+    margin-top: -48px;
+    background-position: 0 -64px;
+
+    z-index: 500;
+    cursor: pointer;
+    background: url(img/fotorama.png) no-repeat;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-size: 100px;
+    background-position-x: -10px;
+    background-position-y: -70PX;
+	}
+
 </style>
 <script>
 $(document).scrollTop(0);
@@ -29,9 +52,14 @@ $(document).scrollTop(0);
 	<!-- story Featurette -->
 	<div class="featurette" >
 
-		<a href="#/slideshow/ids/{{museum_object.id}}"><img ng-pinch-zoom max-scale=“4” class="museum_object featurette-image img-responsive pull-right" ng-src="{{directory}}/assets/{{img.image}}_detail.jpg"
+		<a  href="#/slideshow/ids/{{museum_object.id}}">
+		<img  style="{{functionThatReturnsStyle()}}" 
+		ng-pinch-zoom max-scale=“4” class="museum_object featurette-image img-responsive pull-right" 
+		ng-src="{{directory}}/assets/{{img.image}}_detail.jpg"
 		ng-repeat="img in museum_object.images"
-		ng-class="{active: mainImageUrl==img.image}"></a>
+		ng-class="{active: mainImageUrl==img.image}" ><div  style="{{video_button_style()}}" /></a>
+		
+
 		<h2  class="featurette-heading">{{museum_object.name}}</h2>
 		
 		
