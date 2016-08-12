@@ -16,7 +16,7 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 						$scope.lastOne=true;
 						$scope.pageClass = 'page-about';	
 				
- 
+ 	
 
 $scope.novideo=true
 $scope.kiosk=$routeParams.kiosk
@@ -105,7 +105,7 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 								
 								
 								
-							makeTextDraggable('content-scroller');	
+
 						})
 						
 						
@@ -129,6 +129,8 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 						
 						}
 						$scope.add_nav_buttons()
-							makeTextDraggable('content-scroller');	
+						
+
+							
 						
 }]);

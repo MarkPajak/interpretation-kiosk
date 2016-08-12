@@ -99,7 +99,7 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 							  
 		//  }
 					  })
-					  	makeTextDraggable('content-scroller');	
+					  
 					  }
 					  
 					  vm.loadMoreShots = function() {
