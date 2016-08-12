@@ -92,7 +92,7 @@ $(document).scrollTop(0);
  <div class="panel-heading">More about this:</div>
  <div class="panel-body">
  <div class="list-group">
-  <a href="#/id/{{irn.id}}/{{irn.link}}"  class="list-group-item list-group-item-details" ng-repeat="irn in museum_object.child">
+  <a  style="{{changeheadingcolor()}}"  href="#/id/{{irn.id}}/{{irn.link}}"  class="list-group-item list-group-item-details" ng-repeat="irn in museum_object.child">
 		<div class="thumb_box_list thumb_box_list-details ">  
 		<img  ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{irn.image}}_thumb.jpg"/>
 		</div>   
