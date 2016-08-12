@@ -140,7 +140,7 @@ $scope.pageClass = 'page-about';
 					  		
 					   vm.loadMoreShots(); 
 					   
-				makeTextDraggable('content-scroller');			  
+						  
 		 }
 					  
 					  vm.loadMoreShots = function() {
