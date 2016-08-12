@@ -149,7 +149,8 @@ museum_objectcatServices.factory('load_object_record', function() {
   var mainImageUrl = "http://museums.bristol.gov.uk/multimedia/entry.php?request=resource&irn="+museum_object.images[0].image+"&width=600&format=jpeg";
 	
 			var source
-			var controller
+			var controller=[]
+			controller.videos=[]
 			if(museum_object.video){
 			
 			_.each(museum_object.video, function(vid) { 
@@ -168,7 +169,7 @@ museum_objectcatServices.factory('load_object_record', function() {
                 autoHide: false,
                 autoHideTime: 3000,
                 autoPlay: false,
-                sources: controller.videos[0].sources,
+                sources: controller.videos[0] && controller.videos[0].sources ||"",
                 theme: {
                     url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"
                 },
