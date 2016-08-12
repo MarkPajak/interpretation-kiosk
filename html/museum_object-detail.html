@@ -54,7 +54,7 @@ $(document).scrollTop(0);
 
 		<a  href="#/slideshow/ids/{{museum_object.id}}/{{kiosk}}">
 		<img  style="{{functionThatReturnsStyle()}}" 
-		ng-pinch-zoom max-scale=“4” class="museum_object featurette-image img-responsive pull-right" 
+		ng-pinch-zoom max-scale=â€œ4â€ class="museum_object featurette-image img-responsive pull-right" 
 		ng-src="{{directory}}/assets/{{img.image}}_detail.jpg"
 		ng-repeat="img in museum_object.images"
 		ng-class="{active: mainImageUrl==img.image}" ><div  style="{{video_button_style()}}" /></a>
@@ -92,7 +92,7 @@ $(document).scrollTop(0);
  <div class="panel-heading">More about this:</div>
  <div class="panel-body">
  <div class="list-group">
-  <a  style="{{changeheadingcolor()}}"  href="#/id/{{irn.id}}/{{irn.link}}"  class="list-group-item list-group-item-details" ng-repeat="irn in museum_object.child">
+  <a  style="{{changeheadingcolor()}}"  href="#/id/{{irn.id}}/{{kiosk}}"  class="list-group-item list-group-item-details" ng-repeat="irn in museum_object.child">
 		<div class="thumb_box_list thumb_box_list-details ">  
 		<img  ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{irn.image}}_thumb.jpg"/>
 		</div>   
