@@ -91,5 +91,5 @@ $scope.artistUpdate = function() {
 };	
 		
  productService.addProduct($scope.museum_objects);
- makeTextDraggable('content-scroller');	
+ 
   }]);
