@@ -17,7 +17,10 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 						$scope.pageClass = 'page-about';	
 				
  	
-
+  $scope.start_screen_saver = function ( ) {
+	 screen_saver_loop.start_screen_saver()
+		
+};
 $scope.novideo=true
 $scope.kiosk=$routeParams.kiosk
 kiosk=$routeParams.kiosk
@@ -71,7 +74,7 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 												})
 												$scope.childlinks=child_id_string
 												   $scope.go = function ( path ) {
-													  screen_saver_loop.screensaverOff()
+													 
 														$location.path( path +"/"+$routeParams.kiosk);
 													};
 
@@ -103,7 +106,7 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 									}
 								 $scope.go_video = function (  ) {
 								
-													  screen_saver_loop.screensaverOff()
+													 // screen_saver_loop.screensaverOff()
 													 $location.path( '/slideshow/ids/'+museum_object.id );
 													};
 													return false

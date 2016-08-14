@@ -3,7 +3,7 @@ museum_objectcatControllers.controller('slideshowCtrl',
 										'$routeParams',
 										'museum_object_index','screen_saver_loop','$location', '$interval','$rootScope',
 		function($scope,  $routeParams,museum_object,screen_saver_loop,$location, $interval,$rootScope) {
-		
+		// screen_saver_loop.start_screen_saver()
 			 $scope.kiosk=$routeParams.kiosk||"PPL-CR-ICT05"
 kiosk=$routeParams.kiosk
 $scope.kiosk=$routeParams.kiosk
@@ -14,6 +14,13 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+" !important;"
 
      return  color
 }
+
+  $scope.start_screen_saver = function ( ) {
+	 screen_saver_loop.start_screen_saver()
+		
+};
+
+
 $scope.changeheadingcolor = function() {
 kiosk=$scope.kiosk
 
@@ -24,15 +31,11 @@ var color="color:"+ set_color_by_kiosk(kiosk)+";"
 	 
 
    $scope.go = function ( path ) {
-	  screen_saver_loop.screensaverOff()
+	
 		$location.path( path +"/"+$routeParams.kiosk);
 };
 
-			$scope.screensaverOff = function() {
-				console.log('screensaveroff')
-				screen_saver_loop.screensaverOff()
-			};
-
+			
 				
 					var fotorama = $('.fotorama').fotorama();
 					$scope.dismiss = function() {
@@ -228,6 +231,15 @@ var color="color:"+ set_color_by_kiosk(kiosk)+";"
 
 											});
 								});
+								
+								$('.fotorama').on(
+								
+									  'fotorama:loadvideo ',
+									
+									  function (e, fotorama, extra) {
+										  console.log('play video...')
+									//screen_saver_loop.screensaverOff()
+									});
 					
 					
 										

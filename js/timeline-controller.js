@@ -72,7 +72,10 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 	
 	};	
 	
-	
+	  $scope.start_screen_saver = function ( ) {
+	 screen_saver_loop.start_screen_saver()
+		
+};
 	
 		
 		

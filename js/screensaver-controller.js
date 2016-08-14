@@ -132,12 +132,12 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
   }
 
    $scope.go = function ( path ) {
-	  screen_saver_loop.screensaverOff()
+	  //screen_saver_loop.screensaverOff()
 		$location.path( path +"/"+$routeParams.kiosk);
 };
 
-   $scope.screensaverOff = function (  ) {
-	  screen_saver_loop.screensaverOff()
+  $scope.start_screen_saver = function ( ) {
+	 screen_saver_loop.start_screen_saver()
 		
 };
 				

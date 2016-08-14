@@ -76,46 +76,62 @@ document.onmouseup = _destroy;
 
 
 museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$location,$interval) {
-//NB make sure any views called int he screensaver dont contain the screensaver service!
- var sharedService = {};
- var currentView =['/grid/story','/grid/object','/']
-  $rootScope.i = 0
- var timer
- 
-function switchview(i){
 	
-		$rootScope.updateInterval 
-		console.log(i)
-		if(i>=currentView.length){i=0;$rootScope.i=0}		console.log('switchview:' +currentView[i])
-		$location.path(currentView[i])
-		$rootScope.i++
-
-}
 
 
-$interval.cancel(timer);
 
+				//NB make sure any views called int he screensaver dont contain the screensaver service!
+				 var sharedService = {};
+				 var currentView =['/grid/story','/grid/object','/']
+				  $rootScope.i = 0
+				 var timer
+				 
+				function switchview(i){
+					
+						 var videoElement = $('iframe').contents().find("video").get(0)
+				if  (!videoElement || videoElement.paused) {
+					
+			
+						console.log('no video playing')
+						$rootScope.updateInterval 
+						console.log(i)
+						if(i>=currentView.length){i=0;$rootScope.i=0}		console.log('switchview:' +currentView[i])
+						$location.path(currentView[i])
+						$rootScope.i++
+					}
+					else{
+						
+						console.log('video playing..cancel')
+					}
+					
+						
 
-  sharedService.start_screen_saver = function() {
-	 
-	
-	if($location.path()!="/screen_saver_images"){	
-$rootScope.screensaver_on=true
-    $rootScope.timer = $interval(function() { switchview( $rootScope.i) }, 10000)
-	}
-	
-  
-  };
+				}
 
-  sharedService.screensaverOff = function() {
-	$rootScope.screensaver_on=false
-   $interval.cancel($rootScope.timer );
-   console.log('screensaver off')
-//$rootScope.timer = $interval(function() { switchview( $rootScope.i) }, 1 *60 *  1000)
-   
-  };
+					$interval.cancel(timer);
 
-  return sharedService;
+				  sharedService.start_screen_saver = function() {
+					  $interval.cancel($rootScope.timer );
+					
+					if($location.path()!="/screen_saver_images"){	
+							$rootScope.screensaver_on=true
+							console.log('screensaver on')
+							$rootScope.timer = $interval(function() { switchview( $rootScope.i) }, 1 *60*  1000)
+					}
+					
+				  
+				  };
+
+				  sharedService.screensaverOff = function() {
+						$rootScope.screensaver_on=false
+					   $interval.cancel($rootScope.timer );
+					   console.log('screensaver off')
+					  
+				
+				   
+				  };
+
+				  return sharedService;
 });
   
   

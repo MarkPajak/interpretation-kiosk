@@ -44,13 +44,13 @@ $scope.pageClass = 'page-about';
   $scope.card.title = 'test';
   vm.page = 0;
   vm.shots = [];
-  $scope.screensaverOff = function (  ) {
-	  screen_saver_loop.screensaverOff()
+  $scope.start_screen_saver = function ( ) {
+	 screen_saver_loop.start_screen_saver()
 		
 };
    $scope.go = function ( path ) {
-	  screen_saver_loop.screensaverOff()
-		$location.path( path +"/"+$routeParams.kiosk);
+	  //screen_saver_loop.screensaverOff()
+	  $location.path( path +"/"+$routeParams.kiosk);
 };
   
   vm.loadingMore = false;
