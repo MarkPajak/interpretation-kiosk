@@ -95,8 +95,26 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 											$scope.novideo=false
 											$scope.video_button_style = function() {
 												kiosk=$scope.kiosk
-												
-												style="position: absolute;width: 86px;	height: 96px;right: 20%;top: 4%;margin-left: -48px;margin-top: -48px;background-position: 0 -64px;z-index: 500;cursor: pointer;background: url(img/fotorama.png) no-repeat;	-webkit-tap-highlight-color: transparent;-webkit-user-select: none;	-moz-user-select: none;-ms-user-select: none;user-select: none;background-size: 100px;background-position-x: -10px;background-position-y: -70PX;"
+
+												style="position: relative;"
+												style+=		"width: 156px;"
+												style+=		"height: 206px;"
+												style+=		"right: -75%;"
+												style+=	   "top: 140px;"
+												style+=		"margin-left: -38px;"
+												style+=	"margin-top: -48px;"
+												style+=	"background-position: 0 -64px;"
+												style+=	"z-index: 500;"
+												style+=	"cursor: pointer;"
+												style+=	"background: url(img/fotorama.png) no-repeat;"
+												style+="-webkit-tap-highlight-color: transparent;"
+												style+="-webkit-user-select: none;"
+												style+=	"-moz-user-select: none;"
+												style+=	"-ms-user-select: none;"
+												style+="user-select: none;"
+												style+="background-size: 170px;"
+												style+=	"b background-position-x: -10px;"
+												style+=	"background-position-y: -120PX;"
 												
 												
 											
