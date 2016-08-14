@@ -16,7 +16,8 @@ var animateApp = angular.module('animateApp', [
 		'underscore',
 		'ngScrollbar',
 		'ngMaterial',
-		'ngPinchZoom',
+		//'ngPinchZoom',
+	
 		'ngTimeline',
 		'angularGrid',
 		'ng-drag-scroll'
