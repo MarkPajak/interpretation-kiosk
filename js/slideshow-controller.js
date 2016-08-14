@@ -200,6 +200,7 @@ var color="color:"+ set_color_by_kiosk(kiosk)+";"
 							console.log('dataload')
 								fotorama.load(datax);
 								console.log(datax)
+								fotorama.playVideo()
 								 });
 								 
 								fotorama.on('fotorama:show', function (e, fotorama) {

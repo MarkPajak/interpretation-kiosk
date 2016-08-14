@@ -6,18 +6,23 @@ museum_objectcatControllers.controller('screen_saver',
 										'$q',
 										'$routeParams',
 										'$location',
-										'museum_object_index','image_feed',
+										'museum_object_index',
+										'image_feed',
 										'museum_objects_by_artist',
-										'artist_list','gallery_list',
-										'$debounce','productService','screen_saver_loop','$location','$rootScope',
-function($scope, $http, $q,$routeParams,$location,museum_object_index,
-										image_feed,
-										museum_objects_by_artist,
+										'artist_list',
+										'gallery_list',
+										'$debounce',
+										'productService',
+										'screen_saver_loop',
+										'$location',
+										'$rootScope',
+										'detect_dragging',
+function($scope, $http, $q,$routeParams,$location,museum_object_index,image_feed,							museum_objects_by_artist,
 										artist_list,
 										gallery_list,
 										$debounce,
 										productService,
-										screen_saver_loop, $location,$rootScope
+										screen_saver_loop, $location,$rootScope,detect_dragging
 										) {
   var vm = this;
   
@@ -29,23 +34,22 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 
      return  color
 }
-  $scope.card = {};
-   $scope.pageClass = 'page-contact';		
-  $scope.card.title = 'test';
-  vm.page = 0;
-  vm.shots = [];
-  vm.loadingMore = false;
+    $scope.card = {};
+    $scope.card.title = 'test';
+    vm.page = 0;
+    vm.shots = [];
+    vm.loadingMore = false;
   	$scope.artists = artist_list.query_index();
 	$scope.galleries = gallery_list.query_index();
 	$scope.location="Find out more about the objects in this gallery..."
 	$scope.orderProp = 'age';
     $scope.listType = 'people';
     $scope.labels="labels";
-	 $scope.directory=dir
-	 $scope.$watch('artist', function(newValue, oldValue) {
+	$scope.directory=dir
+ 	$scope.$watch('artist', function(newValue, oldValue) {
     if (newValue === oldValue) { return; }
     $debounce(applyArtistQuery, 750);
-   });
+    });
 
    var applyArtistQuery = function() { 
     $scope._artist = $scope.artist;
@@ -104,41 +108,44 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 					  
 					  vm.loadMoreShots = function() {
 
-    if(vm.loadingMore) return;
-    vm.page++;
-    vm.loadingMore = true;
-	
-	var promise =museum_object_index.query_index({listType:$scope.listType}, function(museum_objects) {  
-			   
-			   load_objects_into_grid(museum_objects,vm.page);
-			   
-			  var shotsTmp = angular.copy(vm.shots);
-			   shotsTmp = shotsTmp.concat(images_to_add);
-			  vm.shots = shotsTmp;
-			  vm.loadingMore = false;
-				}, function() {
+					if(vm.loadingMore) return;
+					vm.page++;
+					vm.loadingMore = true;
+					
+					var promise =museum_object_index.query_index({listType:$scope.listType}, function(museum_objects) {  
+							   
+							   load_objects_into_grid(museum_objects,vm.page);
+							   
+							  var shotsTmp = angular.copy(vm.shots);
+							   shotsTmp = shotsTmp.concat(images_to_add);
+							  vm.shots = shotsTmp;
+							  vm.loadingMore = false;
+								}, function() {
 
-				  vm.loadingMore = false;
-				});
-				return promise;
-  };
+								  vm.loadingMore = false;
+								});
+								return promise;
+				  };
 			  
-	  vm.loadMoreShots();	
+					vm.loadMoreShots();	
 	
 
- if($rootScope.screensaver_on!=true){
-	 console.log('start screensaver')
-   screen_saver_loop.start_screen_saver();
-  }
+					 if($rootScope.screensaver_on!=true){
+						 console.log('start screensaver')
+					   screen_saver_loop.start_screen_saver();
+					  }
+					detect_dragging.drag_handler()
+					   $scope.go = function ( path ) {
+						  
+						   if( $rootScope.isDragging==false){
+							$location.path( "id/"+ path +"/"+$scope.kiosk);
+							detect_dragging.drag_handler()
+						   }
+					};
 
-   $scope.go = function ( path ) {
-	  //screen_saver_loop.screensaverOff()
-		$location.path( path +"/"+$routeParams.kiosk);
-};
-
-  $scope.start_screen_saver = function ( ) {
-	 screen_saver_loop.start_screen_saver()
-		
-};
-				
+					  $scope.start_screen_saver = function ( ) {
+						 screen_saver_loop.start_screen_saver()
+							
+					};
+						 $scope.pageClass = 'page-contact';				
 }]);
