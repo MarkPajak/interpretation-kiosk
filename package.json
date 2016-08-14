@@ -1,0 +1,53 @@
+{
+  "name": "interpretation-kiosk",
+  "version": "1.1.1",
+  "description": "interactive museum content browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarkPajak/interpretation-kiosk.git"
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "animation",
+    "client-side"
+  ],
+	"dependencies": {
+	"angular": "*",
+	"angular-drag-scroll": "*",
+	"angulargrid":  "*",
+	"angular-material": "*",
+	"bootstrap": "*",
+	"fotorama": "*",
+	"angular-mocks":  "*",
+	"pinch-zoom":  "*",
+	"angular-resource": "*",
+	"angular-route":  "*",
+	"angular-sanitize":  "*",
+	"angulartics":  "*",
+	"angular-timelinejs3":  "*",
+	"angular-utils-pagination":  "*",
+	
+	"jquery":  "*",
+	"fuse.js":  "*",
+	"sha1":  "*",
+	"underscore":  "*",
+	"waypoints":  "*",
+	"sha1":  "*",
+	"ng-scrollbar":  "*",
+	"angular-timelinejs3": "*"
+
+	 
+  },
+  "author": "Angular Core Team <angular-core+npm@google.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "homepage": "http://angularjs.org"
+}
