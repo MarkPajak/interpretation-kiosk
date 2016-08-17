@@ -11,6 +11,13 @@
 	width:100%; 
 }
 
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .5;
+    z-index: -90 !important;/*casuses issues if gets stuck on top */
+}
+
+
 .page h1 	{ font-size:60px; }
 .page a     { margin-top:50px; }
 #about      { color:#333;    }
