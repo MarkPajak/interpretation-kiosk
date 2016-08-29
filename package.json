@@ -40,7 +40,10 @@
 	"waypoints":  "*",
 	"sha1":  "*",
 	"ng-scrollbar":  "*",
-	"angular-timelinejs3": "*"
+	"angular-timelinejs3": "*",
+	"api-check": "*",
+	"angular-formly-templates-bootstrap": "*",
+	"angular-formly": "*"
 
 	 
   },
