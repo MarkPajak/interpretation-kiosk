@@ -38,7 +38,6 @@
 			<script src="node_modules/angular/angular.js"></script>
 			<script src="node_modules/angular-animate/angular-animate.js"></script>
 
-	<script src="node_modules/angular-drag-scroll/src/ng-drag-scroll.js"></script>
 
 
 			<script src="node_modules/angular-route/angular-route.js"></script>
@@ -71,6 +70,12 @@
 			<script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
 			<script src="node_modules/ng-scrollbar/dist/ng-scrollbar.min.js"></script>
 
+			
+			<!--DEV-->
+			   <script src="node_modules/api-check/dist/api-check.min.js"></script>
+			    <script src="node_modules/angular-formly/dist/formly.min.js"></script>
+				<script src="node_modules/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+	
 
 			<script src="js/app.js"></script>
 			<script src="js/kiosk-tweaks.js"></script>
@@ -80,6 +85,7 @@
 			<script src="js/timeline-controller.js"></script>
 			<script src="js/details-controller.js"></script>
 			<script src="js/list-controller.js"></script>
+			<script src="js/feedback-controller.js"></script>
 			<script src="js/grid-controller.js"></script>
 			<script src="js/screensaver-controller.js"></script>
 			<script src="js/screensaver-images.js"></script>
@@ -93,6 +99,7 @@
 	<div  class="view-container">
 		
 		<div   ng-click="screensaverOff()"  autoscroll="true" class="page {{ pageClass }}" ng-view></div>	
-	</div>       
+	</div>
+	
 </body>
 </html>
