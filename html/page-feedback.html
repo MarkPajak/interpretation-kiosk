@@ -1,0 +1,47 @@
+<div " ng-hide="currentPath === '/'"  ng-include="'html/menu.html'"></div>
+	
+	
+  <style>
+ 
+.container {
+	background-color: #f2f2f2;
+	border: 1px solid #ccc;	
+	padding: 20px;
+	top: 20px;
+	-webkit-box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
+	box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
+}
+</style>
+
+   <div  class="container col-md-4 col-md-offset-4" ng-controller="MainController as vm">
+       
+ <div>
+      <h1>Feedback</h1>
+    
+      <form ng-submit="vm.onSubmit()" name="vm.form" novalidate>
+        <formly-form model="vm.model" fields="vm.fields" options="vm.options" form="vm.form">
+          <button type="submit" class="btn btn-primary submit-button" ng-disabled="vm.form.$invalid">Submit</button>
+          <button type="button" class="btn btn-default" ng-click="vm.options.resetModel()">Reset</button>
+        </formly-form>
+      </form>
+     
+    </div>
+
+
+    <!-- Put custom templates here -->
+    
+    <script type="text/ng-template" id="custom.html">
+      <div class="form-group">
+        <label for="{{::id}}">{{options.templateOptions.label}}</label>
+        <input id="{{::id}}" name="{{::id}}" class="form-control" ng-model="model[options.key]" />
+      </div>
+    </script>
+    <script type="text/ng-template" id="example-directive.html">
+      <div class="form-group">
+        <label for="{{::id}}">{{options.templateOptions.label}}</label>
+        <input id="{{::id}}" name="{{::id}}" class="form-control" ng-model="model[options.key]" />
+      </div>
+    </script>
+
+    </div>
+	 
