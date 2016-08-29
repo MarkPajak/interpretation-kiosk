@@ -40,13 +40,12 @@ if (KIOSK.indexOf("PLC-T") != -1) {
 
 return KColour
 }
-
 //workaround for chrome shortcuts on a touchscreen - to prevent escaping the app
 $(document).keydown(function(e){
-
-  if(17 ) { // + key on num keyboard on my keyboard, test your clients to be sure
+ //e.preventDefault();
+  if(e.keyCode == 17 ) { // + key on num keyboard on my keyboard, test your clients to be sure
      e.preventDefault();
- //alert('BONGOP WINGS');
+
      //trigger tab functionality here
   }
   if(e.keyCode == 27||e.keyCode ==18 ) { // + key on num keyboard on my keyboard, test your clients to be sure

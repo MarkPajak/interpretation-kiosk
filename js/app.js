@@ -16,11 +16,9 @@ var animateApp = angular.module('animateApp', [
 		'underscore',
 		'ngScrollbar',
 		'ngMaterial',
-		//'ngPinchZoom',
-	
 		'ngTimeline',
 		'angularGrid',
-		'ng-drag-scroll'
+		'formly', 'formlyBootstrap'
 		]);
 
 		
@@ -71,6 +69,10 @@ animateApp.config(['$routeProvider',
 	    when('/:kiosk', {
          templateUrl: 'html/screensaver.html',
         controller: 'screen_saver'
+      }).
+	  when('/feedback/:kiosk', {
+         templateUrl: 'html/page-feedback.html',
+        controller: 'feedbackCtrl'
       }).
 	   when('/', {
          templateUrl: 'html/screensaver.html',

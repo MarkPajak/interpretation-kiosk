@@ -291,6 +291,73 @@ museum_objectcatServices.factory('museum_object_index', ['$resource',
 
   }]);
   
+     museum_objectcatServices.factory('picklist', [
+        
+        function province() {
+            function getProvinces() {
+                return [
+                    {
+                        "name": "Alberta",
+                        "value":"alberta"
+                    },
+                    {
+                        "name":"British Columbia",
+                        "value":"british_columbia"
+                    },
+                    {
+                        "name":"Manitoba",
+                        "value":"manitoba"
+                    },
+                    {
+                        "name":"New Brunswick",
+                        "value":"new_brunswick"
+                    },
+                    {
+                        "name":"Newfoundland and Labrador",
+                        "value":"newfoundland_and_labrador"
+                    },
+                    {
+                        "name":"Northwest Territories",
+                        "value":"northwest_territories"
+                    },
+                    {
+                        "name":"Nova Scotia",
+                        "value":"nova_scotia"
+                    },
+                    {
+                        "name":"Nunavut",
+                        "value":"nunavut"
+                    },              
+                    {
+                        "name":"Ontario",
+                        "value":"ontario"
+                    },
+                    {
+                        "name":"Prince Edward Island",
+                        "value":"prince_edward_island"
+                    },
+                    {
+                        "name":"Quebec",
+                        "value":"quebec"
+                    },
+                    {
+                        "name":"Saskatchewan",
+                        "value":"saskatchewan"
+                    },
+                    {
+                        "name":"Yukon",
+                        "value":"Yukon"
+                    },
+                ];
+            }
+
+            return {
+                getProvinces: getProvinces
+            }
+        }])
+        
+
+  
   museum_objectcatControllers.controller('MyCtrl', ['$scope', '$debounce', function($scope, $debounce) {
         $scope.val = 0;
         $scope.inc = function() {
