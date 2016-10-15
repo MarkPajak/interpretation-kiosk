@@ -1,8 +1,8 @@
 museum_objectcatControllers.controller('slideshowCtrl', 
 										['$scope', 
 										'$routeParams',
-										'museum_object_index','screen_saver_loop','$location', '$interval','$rootScope',
-		function($scope,  $routeParams,museum_object,screen_saver_loop,$location, $interval,$rootScope) {
+										'museum_object_index','screen_saver_loop','$location', '$interval','$rootScope','send_data',
+		function($scope,  $routeParams,museum_object,screen_saver_loop,$location, $interval,$rootScope,send_data) {
 		// screen_saver_loop.start_screen_saver()
 			 $scope.kiosk=$routeParams.kiosk||"PPL-CR-ICT05"
 kiosk=$routeParams.kiosk
@@ -196,18 +196,37 @@ var color="color:"+ set_color_by_kiosk(kiosk)+";"
 
 								var data = [];
 								data.data=(datax );
+								
+							
+								
+								
 								var fotorama = $('.fotorama').data('fotorama');	
-							console.log('dataload')
+							
 								fotorama.load(datax);
 								console.log(datax)
 								fotorama.playVideo()
 								 });
 								 
 								fotorama.on('fotorama:show', function (e, fotorama) {
+									
+									
 							
 									     $('audio').attr("autoplay","");
 									    
 										 $.getJSON( dir+"/id/"+fotorama.activeFrame.id+".json", function( data ) {
+											 
+											 
+									var page = {           
+										page_id: data.id,
+										page_name: data.name,
+										page_type: 'slideshow',
+										kiosk: $scope.kiosk
+									};
+									
+									send_data.add_log(page)
+											 
+											 
+											 
 												var items = [];
 												$('#modaltitle').text(fotorama.activeFrame.caption)
 												$('#modalInfo').html(data.description)
@@ -243,7 +262,8 @@ var color="color:"+ set_color_by_kiosk(kiosk)+";"
 									});
 					
 					
-										
+						
+						
 
 
     };

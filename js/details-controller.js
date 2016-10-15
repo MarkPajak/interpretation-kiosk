@@ -7,8 +7,8 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 																   "$timeout",
 																   "productService",
 																   "load_object_record",
-																   "record_id",'$location','$interval','$rootScope','screen_saver_loop',
-  function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop) {
+																   "record_id",'$location','$interval','$rootScope','screen_saver_loop','send_data',
+  function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop,send_data) {
 	  
 	  
 			$scope.screensaver_on=false
@@ -72,13 +72,26 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 															
 															})
 															$scope.childlinks=child_id_string
-															   $scope.go = function ( path ) {
+															  
+															  $scope.go = function ( path ) {
+																  
+																  var page = {           
+																	page_id:"1234",
+																	page_name: path,
+																	page_type:'button click',
+																	kiosk: $scope.kiosk
+																};
+																
+																send_data.add_log(page)
 																 
 																	$location.path( path +"/"+$routeParams.kiosk);
 																};
 
 
 															  $scope.goSlideshow = function ( path ) {
+																  
+																    
+																
 																
 																  $location.path( '/slideshow'+child_id_string );
 															};
@@ -123,15 +136,17 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 												}
 											
 											$scope.go_video = function (  ) {
+												
+												
 											
 																 // screen_saver_loop.screensaverOff()
 																 $location.path( '/slideshow/ids/'+museum_object.id );
 																};
-																return false
+																//return false
 											})
 											
 											
-											
+											$scope.log_page_view(museum_object)
 
 									})
 									
@@ -157,6 +172,22 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 									}
 									$scope.add_nav_buttons()
 									
+									
+									
+
+								$scope.log_page_view = function (museum_object) {
+
+									var page = {           
+										page_id: museum_object.id,
+										page_name: museum_object.name,
+										page_type: museum_object.type[0],
+										kiosk: $scope.kiosk
+									};
+									
+									send_data.add_log(page)
+									
+								};
+		
 
 							
 						
