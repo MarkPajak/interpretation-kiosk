@@ -16,13 +16,13 @@ museum_objectcatControllers.controller('screen_saver',
 										'screen_saver_loop',
 										'$location',
 										'$rootScope',
-										'detect_dragging',
+										'detect_dragging','app_settings',
 function($scope, $http, $q,$routeParams,$location,museum_object_index,image_feed,							museum_objects_by_artist,
 										artist_list,
 										gallery_list,
 										$debounce,
 										productService,
-										screen_saver_loop, $location,$rootScope,detect_dragging
+										screen_saver_loop, $location,$rootScope,detect_dragging,app_settings
 										) {
   var vm = this;
   
@@ -34,6 +34,8 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 
      return  color
 }
+
+ $scope.call_to_action=app_settings.call_to_action
     $scope.card = {};
     $scope.card.title = 'test';
     vm.page = 0;
@@ -136,10 +138,15 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 					  }
 					detect_dragging.drag_handler()
 					   $scope.go = function ( path ) {
-						  
+						 
 						   if( $rootScope.isDragging==false){
+							 if(path>0){
 							$location.path( "id/"+ path +"/"+$scope.kiosk);
 							detect_dragging.drag_handler()
+							 }else
+							{
+								$location.path(  path +"/"+$scope.kiosk);
+							}
 						   }
 					};
 

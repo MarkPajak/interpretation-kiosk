@@ -63,7 +63,8 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 				function switchview(i){
 					
 						 var videoElement = $('iframe').contents().find("video").get(0)
-				if  (!videoElement || videoElement.paused) {
+						 var audioElement_not_playing = audioplayer.paused
+				if  ((!videoElement || videoElement.paused) && audioElement_not_playing) {
 					
 			
 						console.log('no video playing')
@@ -82,7 +83,7 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 
 				}
 
-					$interval.cancel(timer);
+				//	$interval.cancel(timer);
 
 				  sharedService.start_screen_saver = function() {
 					  $interval.cancel($rootScope.timer );
@@ -90,7 +91,7 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 					if($location.path()!="/screen_saver_images"){	
 							$rootScope.screensaver_on=true
 							console.log('screensaver on')
-							$rootScope.timer = $interval(function() { switchview( $rootScope.i) }, 1 *60*  1000)
+							$rootScope.timer = $interval(function() { switchview( $rootScope.i) }, 2 *60*  1000)
 					}
 					
 				  

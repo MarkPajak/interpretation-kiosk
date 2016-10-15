@@ -13,6 +13,24 @@ animateApp.directive('myModal', function() {
 });
 
 
+animateApp.directive('audio', function($sce) {
+  return {
+    restrict: 'A',
+    scope: { code:'=' },
+    replace: true,
+    template: '<audio ng-src="{{url}}" controls></audio>',
+    link: function (scope) {
+		console.log(scope)
+        scope.$watch('code', function (newVal, oldVal) {
+           if (newVal !== undefined) {
+               scope.url = $sce.trustAsResourceUrl("/data/media/" + newVal);
+           }
+        });
+    }
+  };
+});
+
+
  animateApp.directive('dragScroll', DragScroll);
 
     DragScroll.$inject = ['$document', '$window', '$parse'];

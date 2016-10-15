@@ -7,6 +7,7 @@ underscore.factory('_', ['$window', function($window) {
 
 var animateApp = angular.module('animateApp', [
 		'ngRoute',
+		'ngSanitize',
 		'museum_objectcatAnimations',
 		'museum_objectcatControllers',
 		'museum_objectcatFilters',

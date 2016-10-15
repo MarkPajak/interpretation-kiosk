@@ -7,17 +7,31 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 																   "$timeout",
 																   "productService",
 																   "load_object_record",
-																   "record_id",'$location','$interval','$rootScope','screen_saver_loop','send_data',
-  function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop,send_data) {
+																   "record_id",'$location','$interval','$rootScope','screen_saver_loop','send_data','app_settings','media_player',
+  function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop,send_data,app_settings,media_player) {
 	  
 	  
+				$scope.log_page_view = function (museum_object) {
+
+									var page = {           
+										page_id: museum_object.id,
+										page_name: museum_object.name,
+										page_type: museum_object.type[0],
+										kiosk: $scope.kiosk
+									};
+									
+									send_data.add_log(page)
+									
+								};
+			
+			$scope.show_menu=app_settings.hide_menu
 			$scope.screensaver_on=false
 			$scope.labels="labels"
 			$scope.directory=dir
 			$scope.firstOne=true;
 			$scope.lastOne=true;
 			$scope.pageClass = 'page-details';	
-				
+			$scope.menu=app_settings.menu
  	
 			 $scope.start_screen_saver = function ( ) {
 				 screen_saver_loop.start_screen_saver()
@@ -104,36 +118,11 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 												
 											};
 											
-											angular.forEach(museum_object.video, function(object_media) {
-											$scope.novideo=false
-											$scope.video_button_style = function() {
-												kiosk=$scope.kiosk
-
-												style="position: relative;"
-												style+=		"width: 156px;"
-												style+=		"height: 206px;"
-												style+=		"right: -75%;"
-												style+=	   "top: 140px;"
-												style+=		"margin-left: -38px;"
-												style+=	"margin-top: -48px;"
-												style+=	"background-position: 0 -64px;"
-												style+=	"z-index: 500;"
-												style+=	"cursor: pointer;"
-												style+=	"background: url(img/fotorama.png) no-repeat;"
-												style+="-webkit-tap-highlight-color: transparent;"
-												style+="-webkit-user-select: none;"
-												style+=	"-moz-user-select: none;"
-												style+=	"-ms-user-select: none;"
-												style+="user-select: none;"
-												style+="background-size: 170px;"
-												style+=	"b background-position-x: -10px;"
-												style+=	"background-position-y: -120PX;"
-												
-												
 											
-
-													 return  style
-												}
+											$scope.no_audio=false
+											$scope.audiohtml=media_player.play_video($scope.directory,museum_object)
+											
+											
 											
 											$scope.go_video = function (  ) {
 												
@@ -142,13 +131,14 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 																 // screen_saver_loop.screensaverOff()
 																 $location.path( '/slideshow/ids/'+museum_object.id );
 																};
-																//return false
+												$scope.log_page_view(museum_object)
+												//return false
 											})
 											
 											
-											$scope.log_page_view(museum_object)
+									
 
-									})
+									
 									
 									
 									$scope.add_nav_buttons=function(){
@@ -175,18 +165,7 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 									
 									
 
-								$scope.log_page_view = function (museum_object) {
-
-									var page = {           
-										page_id: museum_object.id,
-										page_name: museum_object.name,
-										page_type: museum_object.type[0],
-										kiosk: $scope.kiosk
-									};
-									
-									send_data.add_log(page)
-									
-								};
+							
 		
 
 							

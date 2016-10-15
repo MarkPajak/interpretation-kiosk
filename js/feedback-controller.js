@@ -7,11 +7,12 @@ museum_objectcatControllers.controller('feedbackCtrl',  ['$scope',
 																   "$timeout",
 																   "productService",
 																   "load_object_record",
-																   "record_id",'$location','$interval','$rootScope','screen_saver_loop',
-  function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop) {
+																   "record_id",'$location','$interval','$rootScope','screen_saver_loop','app_settings',
+  function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop,app_settings) {
 
- 
-$scope.kiosk=$routeParams.kiosk
+$scope.show_menu=app_settings.hide_menu
+	$scope.menu=app_settings.menu
+$scope.kiosk=app_settings.kiosk
 kiosk=$routeParams.kiosk
 $scope.functionThatReturnsStyle = function() {
 		kiosk=$scope.kiosk
@@ -83,7 +84,7 @@ $location.path( path +"/"+$routeParams.kiosk);
                             key: 'satisfaction',
 							
                             templateOptions: {
-                              label: "Please rate your satisfaction",  
+                              label: "How satisfied are you with your experience of using this information kiosk?",  
                                 
                                 options: [
 									 {
@@ -126,7 +127,7 @@ $location.path( path +"/"+$routeParams.kiosk);
           }
         }
       },
-
+/*
       {
         key: 'awesome',
         type: 'checkbox',
@@ -141,7 +142,9 @@ $location.path( path +"/"+$routeParams.kiosk);
             }
           }
         }
+		
       },
+	  */
       {
         key: 'whyNot',
         type: 'textarea',
