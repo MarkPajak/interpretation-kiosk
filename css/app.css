@@ -1,7 +1,47 @@
 /* app css stylesheet */
 /* @import must be at top of file, otherwise CSS will not work */
+.feedbackButtons  button:hover { 
+    background-color: white;
+    border: 5px solid;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
 
+.imgx:hover { 
+  border: 5px solid white;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
 
+.feedbackButtons button{
+     font-family: 'AmericanTypewriterStd-Med';
+    text-align: center;
+    background: thite;
+    background-color: #4A9C9B;
+    position: absolute;
+    bottom: -877px;
+    z-index: 600;
+    right: 1%;
+    /* width: 190px; */
+    font-size: 20px;
+    height: 60px;
+}
+.action_Buttons button{
+	
+    font-family: 'AmericanTypewriterStd-Med';
+    text-align: center;
+    background: thite;
+    background-color: #4A9C9B;
+    position: absolute;
+    top: 390px;
+    z-index: 6000;
+    right: 10%;
+    /* width: 190px; */
+    font-size: 30px;x; */
+    font-size: 30px;
+} 
 
 body {
 /*cursor:none!important;*/
