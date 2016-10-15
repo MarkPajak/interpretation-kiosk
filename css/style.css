@@ -18,7 +18,7 @@
 }
 
 
-.page h1 	{ font-size:60px; }
+.page h1 	{ font-size:60px;	font-family: 'AmericanTypewriterStd-Med'; }
 .page a     { margin-top:50px; }
 #about      { color:#333;    }
 

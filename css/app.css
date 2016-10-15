@@ -1,18 +1,8 @@
 /* app css stylesheet */
 /* @import must be at top of file, otherwise CSS will not work */
-/*
-@font-face {font-family: 'AmericanTypewriterStd-Med';
-src: url('webfonts/2E10A6_0_0.eot');
-src: url('webfonts/2E10A6_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E10A6_0_0.woff2') format('woff2'),url('webfonts/2E10A6_0_0.woff') format('woff'),url('webfonts/2E10A6_0_0.ttf') format('truetype');
-}
 
 
 
-@font-face {font-family: 'AvantGardeGothicITCW01Bk';
-src: url('webfonts/2E10A6_1_0.eot');
-src: url('webfonts/2E10A6_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E10A6_1_0.woff2') format('woff2'),url('webfonts/2E10A6_1_0.woff') format('woff'),url('webfonts/2E10A6_1_0.ttf') format('truetype');}
-
-*/
 body {
 /*cursor:none!important;*/
 /*cursorxxx:url(../images/cursor.png), none!important;*/
@@ -79,12 +69,27 @@ padding:15px;
        url('webfonts/2E10A6_1_0.eot') format('eot');
 }
 
+@font-face {
+  font-family: 'AmericanTypewriterStd-Med';
+  font-size: 20px;
+  font-style: normal;
+  src: local('Awesome Font Italic'),
+       url('webfonts/2E10A6_0_0.woff2') format('woff2'), 
+       url('webfonts/2E10A6_0_0.woff') format('woff'),
+       url('webfonts/2E10A6_0_0.ttf') format('ttf'),
+       url('webfonts/2E10A6_0_0.eot') format('eot');
+}
+
 body{
 font-family: 'AvantGardeGothicITCW01Bk-Med';
+
+
 }
 							
-							
+button{	font-family: 'AmericanTypewriterStd-Med';}							
+h2,h3,.fotorama__caption{	font-family: 'AmericanTypewriterStd-Med';}
 
+	a{color: #4A9C9B;}
 .alert {
     padding: 15px;
     margin-bottom: 0px !important; 
