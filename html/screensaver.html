@@ -1,15 +1,15 @@
 
 <div  ng-click="screensaverOff()" ng-controller="screen_saver as vm" ng-cloak="" ng-app="app" layout="column" layout-fill>
 <div  ng-hide="screensaver_on" ng-hide="currentPath === '/'"  ng-include="'html/menu.html'"></div>
-	
-	
+<div  ng-hide="" ng-hide="currentPath === '/'"  ng-include="'html/call_to_action.html'"></div>	
+
   <md-content id="content-scroller">
 
     <div>
         <div
              class="cards-wrap"
              angular-grid="vm.shots"
-             ag-grid-width="300"
+             ag-grid-width="250"
              ag-performant-scroll="true"
              ag-gutter-size="12"
              ag-id="shots"
@@ -17,9 +17,9 @@
              >
          
 		 <div class="a-card" ng-repeat="shot in vm.shots track by $index">
-		  <a ng-click="screensaverOff();go(shot.id)" > 
+		  <div ng-click="screensaverOff();go(shot.id)" > 
             <img class="imgx"src="{{shot.images.normal}}"></img>
-           </a>
+           </div>
           </div>
 		 
         </div>
@@ -31,3 +31,4 @@
   </md-content>
 
 </div>
+	<div   ng-hide="currentPath === '/'"  ng-include="'html/feedback_button.html'"></div>

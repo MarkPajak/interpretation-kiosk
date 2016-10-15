@@ -1,4 +1,5 @@
-<div  ng-hide="screensaver_on" ng-hide="currentPath === '/'"  ng-include="'html/menu.html'"></div>
+<div  ng-hide="{{}}" ng-hide="currentPath === '/'"  ng-include="'html/menu.html'"></div>
+
   <md-content id="content-scroller" >
 <style>
 /* in the css file or in a style block */
@@ -52,13 +53,33 @@ $(document).scrollTop(0);
 	<!-- story Featurette -->
 	<div class="featurette" >
 
-		<a  href="#/slideshow/ids/{{museum_object.id}}/{{kiosk}}">
+		<a  style="display:none" href="#/slideshow/ids/{{museum_object.id}}/{{kiosk}}">
 		<img  style="{{functionThatReturnsStyle()}}" 
 		ng-pinch-zoom max-scale=“4” class="museum_object featurette-image img-responsive pull-right" 
 		ng-src="{{directory}}/assets/{{img.image}}_detail.jpg"
 		ng-repeat="img in museum_object.images"
 		ng-class="{active: mainImageUrl==img.image}" ><div  style="{{video_button_style()}}" /></a>
+		<div       ng-click="screensaverOff()" class="fotorama featurette-image img-responsive pull-right""
+			data-shadows="true"
+		    data-thumbborderwidth="6"
+		   
+		    data-stopautoplayontouch="true"
+		    data-arrows="always"
+	        data-click="false"
+    	    data-auto="true"
+	       
+            data-autoplay="true"
+            data-maxheight="100%"
+	        data-nav="thumbs"
+		    data-thumbwidth="125px";
+		    data-thumbheight="125px";
+		    data-loop="true"
+		    data-shuffle="{{shuffle}}"
+		    data-allowfullscreen="true"
+		    data-keyboard="true"
 		
+		
+></div>
 
 		<h2  class="featurette-heading">{{museum_object.name}}</h2>
 		
@@ -75,16 +96,19 @@ $(document).scrollTop(0);
 		<p class="lead angular-with-newlines ">{{museum_object.description}}</p>
 		<p class="lead angular-with-newlines ">{{museum_object.credit_line}}</p>
 	</div>
-	<hr class="featurette-divider" >  
+	<hr ng-hide="museum_object.summary==null" class="featurette-divider" >  
 	<!-- image Featurette -->
+	
 	<div style="display:none"  class="featurette" id="services"  ng-repeat="img in museum_object.images">
 	 <img class="featurette-image img-circle img-responsive" ng-class-odd="'pull-left'"  ng-class-even="'pull-right'" ng-src="{{directory}}/assets/{{img.image}}_detail.jpg">
+	 
 		<div class="col-lg-12">
 			<p>image: {{img.copyright}}</p>
 		</div>
 		<p class="lead angular-with-newlines ">{{img.description}}</p>
 		
 	</div>
+
 
 	</div>
 
@@ -103,42 +127,7 @@ $(document).scrollTop(0);
 </div>
 
 
-<div ng-app="myApp" >
-<div ng-controller="HomeCtrl as controller" ng-hide="!museum_object.video">
-    <div class="videogular-container" >
-        <videogular vg-player-ready="controller.onPlayerReady($API)" vg-complete="controller.onCompleteVideo()" vg-theme="controller.config.theme.url">
-            <vg-media vg-src="controller.config.sources"
-                      vg-tracks="controller.config.tracks">
-            </vg-media>
 
-            <vg-controls>
-                <vg-play-pause-button></vg-play-pause-button>
-                <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
-                <vg-scrub-bar>
-                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-                </vg-scrub-bar>
-                <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
-                <vg-volume>
-                    <vg-mute-button></vg-mute-button>
-                    <vg-volume-bar></vg-volume-bar>
-                </vg-volume>
-                <vg-fullscreen-button></vg-fullscreen-button>
-            </vg-controls>
-
-            <vg-overlay-play></vg-overlay-play>
-            <vg-buffering></vg-buffering>
-            <vg-poster vg-url='controller.config.plugins.poster'></vg-poster>
-        </videogular>
-    </div>
-    <div class="playlist">
-         <ul ng-repeat="video in controller.videos" ng-if="$index > 0">
-            <li>
-                <button ng-click="controller.setVideo($index)">PLAY VIDEO {{$index}} </button>
-            </li>
-        </ul>
-    </div>
-</div>
-</div>
 
  <!-- Footer -->
    <md-toolbar ng-hide="true" class="md-whiteframe-z2">
