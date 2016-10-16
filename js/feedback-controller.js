@@ -81,8 +81,7 @@ $location.path( path +"/"+$routeParams.kiosk);
 	  {
 
                             type: 'radio',
-                            key: 'satisfaction',
-							
+                            key: 'satisfaction',							
                             templateOptions: {
                               label: "How satisfied are you with your experience of using this information kiosk?",  
                                 
@@ -192,28 +191,31 @@ $location.path( path +"/"+$routeParams.kiosk);
 		
 		
       formData=(vm.model);
+	 
 	  
+	  if(formData.satisfaction ||formData.description!=""){
 	  
 	    $.ajax({
             type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
             url         : 'http://markpajak.co.uk/mark/kiosk-feedback/logger.php', // the url where we want to POST
             data        : formData, // our data object
             dataType    : 'json', // what type of data do we expect back from the server
-             encode          : true
-        })
-            // using the done promise callback
-            .done(function(data) {
-
-                // log data to the console so we can see
-                console.log(data); 
-vm.options.resetModel()
-                // here we will handle errors and validation messages
-            });
+             encode          : true,
+			  success: function(data) {
+        	
+               
+    }
+        }).done(function(data) { console.log('suvccess')
+				vm.options.resetModel()
+  $scope.go('/')})
+    .fail(function() { })
+    .always(function() { });
+           
 
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
 
-
+	  }
 	  
 	  
     }

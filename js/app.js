@@ -20,9 +20,29 @@ var animateApp = angular.module('animateApp', [
 		'ngTimeline',
 		'angularGrid',
 		'formly', 'formlyBootstrap'
-		]);
+		]).config(function config(formlyConfigProvider) {
 
-		
+
+  formlyConfigProvider.setType([
+  {
+    name: 'radio',
+    templateUrl: 'html/formly-radio.html'
+  },
+  {
+    name: 'button',
+    templateUrl: '<button ng-click="options.templateOptions">{{options.label}}</button>'
+  }
+]);
+
+  formlyConfigProvider.setType({
+    name: 'input',
+    template: '<input class="form-control_CHEESE" ng-model="model[options.key]">',
+    wrapper: ['helper', 'bootstrapLabel', 'bootstrapHasError']
+  });
+
+});
+
+
 animateApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
