@@ -2,6 +2,21 @@
 /* BASE STYLES
 ============================================================================= */
 
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    height: 40px;
+    margin-top: 20px;
+}
+
+:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+    outline-color: -webkit-focus-ring-color;
+    outline-style: auto;
+    outline-width: 0px;
+}
 .page        { 
 	bottom:0; 
 
@@ -48,9 +63,9 @@
 	animation: slideOutRight .5s both ease-in; 
 }
 .page-details.ng-enter 		{  
-    -webkit-animation:scaleUp 0.5s both ease-in;
-	-moz-animation:scaleUp 0.5s both ease-in;
-	animation:scaleUp 0.5s both ease-in;    
+    -webkit-animation:slideInRight 0.5s both ease-in;
+	-moz-animation:slideInRight 0.5s both ease-in;
+	animation:slideInRight 0.5s both ease-in;    
 }
 /* home -------------------------- */
 .page-home.ng-leave         {
