@@ -14,20 +14,23 @@ museum_objectcatServices.factory('media_player', ['$http', function ($http) {
     };
 	
 	 StudentDataOp.play_video = function (dir,museum_object) {
+		// $('.fotorama').data('fotorama').destroy()
 		var fotorama = $('.fotorama').fotorama();
+		
 		
 									var datax = []
 									var keys=[]
-				
+				angular.forEach(museum_object.images, function(slide, key) {
+					
 										// if(value.name&&value.description){
 											 name=museum_object.name
 											 name=name.toUpperCase()
 											
 											// if(name.indexOf(filter.toUpperCase())>-1 ||filter=="" ||value.description.toUpperCase().indexOf( filter.toUpperCase())>-1){
 											
-												var img={img: dir+'/assets/' + museum_object.images[0].image + '_detail.jpg', 
-														full:  dir+'/assets/' + museum_object.images[0].image + '_detail.jpg', 
-														thumb:  dir+'/assets/' + museum_object.images[0].image + '_thumb.jpg',
+												var img={img: dir+'/assets/' +slide.image + '_detail.jpg', 
+														full:  dir+'/assets/' + slide.image + '_detail.jpg', 
+														thumb:  dir+'/assets/' + slide.image + '_thumb.jpg',
 														id:museum_object.id ,														
 														gallery:museum_object.gallery ,
 														caption:museum_object.name,
@@ -69,19 +72,23 @@ museum_objectcatServices.factory('media_player', ['$http', function ($http) {
 										 //  }
 									   //}
 								
-
-								var data = [];
+				
+								
+								
+								
+								})
+							var data = [];
 								data.data=(datax );
-								
-							
-								
-								
-								 fotorama = $('.fotorama').data('fotorama');	
-							
+							$(function() {	
+								 fotorama =$('#'+museum_object.id+"_fotorama").data('fotorama');
+								 
+						$('#'+museum_object.id+"_fotorama").data('fotorama').destroy()
 								fotorama.load(datax);
-								console.log(datax)
+								console.log('fotorama datax',datax)
 								fotorama.playVideo()
 								$('audio').attr("autoplay","");
+								
+							})
 							
     };
     return StudentDataOp;

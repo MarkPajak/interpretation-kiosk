@@ -14,6 +14,7 @@ $scope.show_menu=app_settings.hide_menu
 	$scope.menu=app_settings.menu
 $scope.kiosk=app_settings.kiosk
 kiosk=$routeParams.kiosk
+$scope.kiosk=$routeParams.kiosk
 $scope.functionThatReturnsStyle = function() {
 		kiosk=$scope.kiosk
 		var color="background-color:"+ set_color_by_kiosk(kiosk)+";"

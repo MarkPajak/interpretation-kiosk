@@ -96,8 +96,10 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 																	kiosk: $scope.kiosk
 																};
 																
+																
+																
 																send_data.add_log(page)
-																 
+																 console.log(path +"/"+$routeParams.kiosk)
 																	$location.path( path +"/"+$routeParams.kiosk);
 																};
 
