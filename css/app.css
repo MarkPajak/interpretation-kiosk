@@ -1,12 +1,6 @@
 /* app css stylesheet */
 /* @import must be at top of file, otherwise CSS will not work */
-.feedbackButtons  button:hover { 
-    background-color: white;
-    border: 5px solid;
-	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-}
+
 .hvr-grow {
   display: inline-block;
   vertical-align: middle;
