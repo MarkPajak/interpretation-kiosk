@@ -59,7 +59,7 @@ $(document).scrollTop(0);
 		ng-src="{{directory}}/assets/{{img.image}}_detail.jpg"
 		ng-repeat="img in museum_object.images"
 		ng-class="{active: mainImageUrl==img.image}" ><div  style="{{video_button_style()}}" /></a>
-		<div       ng-click="screensaverOff()" class="fotorama featurette-image img-responsive pull-right""
+		<div       id="{{museum_object.id}}_fotorama" ng-click="screensaverOff()" class="fotorama featurette-image img-responsive pull-right""
 			data-shadows="true"
 		    data-thumbborderwidth="6"
 		   
@@ -112,20 +112,31 @@ $(document).scrollTop(0);
 
 	</div>
 
-<div  class="panel panel-default" ng-hide="museum_object.child.length==0">
- <div class="panel-heading">More about this:</div>
+<div  class="container" ng-hide="museum_object.child.length==0">
+ <h2>Read More about this:<h2>
  <div class="panel-body">
- <div class="list-group">
-  <a  style="{{changeheadingcolor()}}"  href="#/id/{{irn.id}}/{{kiosk}}"  class="list-group-item list-group-item-details" ng-repeat="irn in museum_object.child">
-		<div class="thumb_box_list thumb_box_list-details ">  
-		<img  ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{irn.image}}_thumb.jpg"/>
-		</div>   
-		{{irn.name}}
-	</a>
+    <div
+             class="cards-wrap"
+             angular-grid="vm.shots"
+			 autoscroll="true"
+             ag-grid-width="300"
+             ag-performant-scroll="true"
+             ag-gutter-size="12"
+             ag-id="shots"
+             ag-infinite-scroll="vm.loadMoreShots()"
+             >
+          <div class="card hvr-grow" ng-repeat="irn in museum_object.child track by $index">
+		  <a  style="{{changeheadingcolor()}}"   href="#id/{{irn.id}}/{{kiosk}}"  >
+            <div class="img hvr-grow" style="background-image: url({{directory}}/assets/{{irn.image}}_detail.jpg);"></div>
+            <div class="inside">
+              <h3>{{irn.name}}</h3>
+              <div class="description" ng-bind-html="::irn.description | unsafe"></div>
+            </div>
+		</a>
+          </div>
+        </div>
 </div>
 </div>
-</div>
-
 
 
 
