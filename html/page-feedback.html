@@ -26,7 +26,7 @@ font-size:25px !important;
       <h1>Feedback</h1>
       <form ng-submit="vm.onSubmit()" name="vm.form" novalidate>
         <formly-form model="vm.model" fields="vm.fields" options="vm.options" form="vm.form">
-          <button type="submit" class="hvr-grow  btn btn-lg btn-primary submit-button" ng-disabled="vm.form.$invalid">Submit</button>
+          <button type="submit" class="hvr-grow btn btn-primary btn-lg" ng-disabled="vm.form.$invalid">Submit</button>
           <button type="button" class="hvr-grow  btn btn-lg  btn-default" ng-click="vm.options.resetModel()">Reset</button>
         </formly-form>
       </form>
