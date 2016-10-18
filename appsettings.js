@@ -14,7 +14,7 @@ museum_objectcatServices.factory('app_settings', ['$http', function ($http) {
 	menu.hide_slideshow_button= true
 	menu.hide_feedback_button= true
 	kiosk="SOMALI-KIOSK"
-	call_to_action="Select a picture"
+	call_to_action="Select a picture to hear a story.<p> Interviews recorded and edited by volunteers from the Somali community."
 	 var app_settings = {'hide_menu':true,'menu':menu,'call_to_action':call_to_action,'kiosk':kiosk};
 	
 	
