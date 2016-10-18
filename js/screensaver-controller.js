@@ -74,7 +74,7 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 		 
 		 objectsloaded_in_current_batch=0;
 		 
-		  shuffle(museum_objects);
+		 // shuffle(museum_objects);
 		 angular.forEach(museum_objects , function(object, key) {
 	
 	//if(key>page*max_objects_in_page){
