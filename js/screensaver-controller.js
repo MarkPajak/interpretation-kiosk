@@ -26,7 +26,7 @@ function($scope, $http, $q,$routeParams,$location,museum_object_index,image_feed
 										) {
   var vm = this;
   
-$scope.kiosk=$routeParams.kiosk||"PPL-CR-ICT05"
+$scope.kiosk=app_settings.kiosk||"null"
 kiosk=$routeParams.kiosk
 $scope.functionThatReturnsStyle = function() {
 kiosk=$scope.kiosk

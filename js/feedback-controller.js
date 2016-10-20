@@ -11,9 +11,11 @@ museum_objectcatControllers.controller('feedbackCtrl',  ['$scope',
   function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop,app_settings) {
 
 $scope.show_menu=app_settings.hide_menu
-	$scope.menu=app_settings.menu
+$scope.menu=app_settings.menu
+
 $scope.kiosk=app_settings.kiosk
-kiosk=$routeParams.kiosk
+//kiosk=$routeParams.kiosk
+
 $scope.kiosk=$routeParams.kiosk
 $scope.functionThatReturnsStyle = function() {
 		kiosk=$scope.kiosk
@@ -23,7 +25,7 @@ $scope.functionThatReturnsStyle = function() {
 }
 $scope.changeheadingcolor = function() {
 kiosk=$scope.kiosk
-var color="color:"+ set_color_by_kiosk(kiosk)+";"
+var color="color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
 
      return  color
 }
@@ -68,7 +70,7 @@ $location.path( path +"/"+$routeParams.kiosk);
 
     vm.model = {
       awesome: true,
-	  kiosk:$scope.kiosk,
+	  kiosk:app_settings.kiosk,
 	  description:""
     };
     vm.options = {

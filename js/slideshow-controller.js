@@ -1,10 +1,10 @@
 museum_objectcatControllers.controller('slideshowCtrl', 
 										['$scope', 
 										'$routeParams',
-										'museum_object_index','screen_saver_loop','$location', '$interval','$rootScope','send_data',
-		function($scope,  $routeParams,museum_object,screen_saver_loop,$location, $interval,$rootScope,send_data) {
+										'museum_object_index','screen_saver_loop','$location', '$interval','$rootScope','send_data','app_settings',
+		function($scope,  $routeParams,museum_object,screen_saver_loop,$location, $interval,$rootScope,send_data,app_settings) {
 		// screen_saver_loop.start_screen_saver()
-			 $scope.kiosk=$routeParams.kiosk||"PPL-CR-ICT05"
+			 $scope.kiosk=app_settings.kiosk||"null"
 kiosk=$routeParams.kiosk
 $scope.kiosk=$routeParams.kiosk
 kiosk=$routeParams.kiosk
@@ -24,7 +24,7 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+" !important;"
 $scope.changeheadingcolor = function() {
 kiosk=$scope.kiosk
 
-var color="color:"+ set_color_by_kiosk(kiosk)+";"
+var color="color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
 
      return  color
 }

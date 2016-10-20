@@ -22,13 +22,13 @@ $scope.kiosk=$routeParams.kiosk
 kiosk=$routeParams.kiosk
 $scope.functionThatReturnsStyle = function() {
 kiosk=$scope.kiosk
-var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
+var color="background-color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
 
      return  color
 }
 $scope.changeheadingcolor = function() {
 kiosk=$scope.kiosk
-var color="color:"+ set_color_by_kiosk(kiosk)+";"
+var color="color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
 
      return  color
 }

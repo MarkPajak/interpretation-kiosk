@@ -17,7 +17,7 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 										page_id: museum_object.id,
 										page_name: museum_object.name,
 										page_type: museum_object.type[0],
-										kiosk: $scope.kiosk
+										kiosk: app_settings.kiosk
 									};
 									
 									send_data.add_log(page)
@@ -44,14 +44,14 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 			
 			$scope.changeheadingcolor = function() {
 			kiosk=$scope.kiosk
-			var color="color:"+ set_color_by_kiosk(kiosk)+" !important;"
+			var color="color:"+ set_color_by_kiosk($routeParams.kiosk)+" !important;"
 
 				 return  color
 			}
 			
 			$scope.functionThatReturnsStyle = function() {
 			kiosk=$scope.kiosk
-			var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
+			var color="background-color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
 
 				 return  color
 			}

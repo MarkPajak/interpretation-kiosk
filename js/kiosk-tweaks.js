@@ -21,6 +21,10 @@ if (KIOSK.indexOf("PPL-CN") != -1) {
     KColour = '#167516';
 }
 
+if (KIOSK.indexOf("SOMALI-KIOSK") != -1) {
+    KColour = '#000000';
+}
+
 if (KIOSK.indexOf("PPL-CR") != -1) {
     KColour = '#4A9C9B';
 }
