@@ -29,7 +29,7 @@ function($scope, $http, $q,$routeParams,$location,museum_object_index,image_feed
 $scope.kiosk=app_settings.kiosk||"null"
 kiosk=$routeParams.kiosk
 $scope.functionThatReturnsStyle = function() {
-kiosk=$scope.kiosk
+
 var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 
      return  color
