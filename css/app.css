@@ -42,7 +42,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 .action_Buttons button{
 	
     font-family: 'AmericanTypewriterStd-Med';
-    text-align: center;
+    text-align: left;
     background: thite;
     background-color: #4A9C9B;
     position: absolute;
