@@ -171,7 +171,7 @@ $location.path( path +"/"+$routeParams.kiosk);
               stopWatching();
               formScope.model.awesome = true;
 			  formScope.model.satisfaction = undefined;
-			  formScope.model.kiosk=$scope.kiosk;
+			  formScope.model.kiosk=app_settings.kiosk;
               formScope.model.whyNot = undefined;
               field.hideExpression = null;
               formScope.options.formState.awesomeIsForced = true;
