@@ -43,14 +43,14 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 			kiosk=$routeParams.kiosk
 			
 			$scope.changeheadingcolor = function() {
-			kiosk=$scope.kiosk
+			//kiosk=$scope.kiosk
 			var color="color:"+ set_color_by_kiosk($routeParams.kiosk)+" !important;"
 
 				 return  color
 			}
 			
 			$scope.functionThatReturnsStyle = function() {
-			kiosk=$scope.kiosk
+			//kiosk=$scope.kiosk
 			var color="background-color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
 
 				 return  color
