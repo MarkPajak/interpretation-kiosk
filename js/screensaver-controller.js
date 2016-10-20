@@ -141,11 +141,11 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 						 
 						   if( $rootScope.isDragging==false){
 							 if(path>0){
-							$location.path( "id/"+ path +"/"+$scope.kiosk);
+							$location.path( "id/"+ path +"/"+$routeParams.kiosk);
 							detect_dragging.drag_handler()
 							 }else
 							{
-								$location.path(  path +"/"+$scope.kiosk);
+								$location.path(  path +"/"+$routeParams.kiosk);
 							}
 						   }
 					};
