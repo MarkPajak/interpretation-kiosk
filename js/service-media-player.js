@@ -16,6 +16,7 @@ museum_objectcatServices.factory('media_player', ['$http', function ($http) {
 	 StudentDataOp.play_video = function (dir,museum_object) {
 		// $('.fotorama').data('fotorama').destroy()
 		var fotorama = $('.fotorama').fotorama();
+		 if(dir.indexOf("file") == -1){dir=dir+"/"}
 		
 		
 									var datax = []
