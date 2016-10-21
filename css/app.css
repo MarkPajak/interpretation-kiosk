@@ -15,6 +15,12 @@
   -webkit-transition-property: transform;
   transition-property: transform;
 }
+
+md-content {
+  background: #868F94 !important;
+  position: relative;
+}
+
 .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
