@@ -210,7 +210,7 @@ $location.path( path );
     }
         }).done(function(data) { console.log('suvccess')
 				vm.options.resetModel()
-  $scope.go('/')})
+  $scope.go('/'+$routeParams.kiosk)})
     .fail(function() { })
     .always(function() { });
            
