@@ -47,7 +47,7 @@ $scope.pageClass = 'page-grid';
 
    $scope.go = function ( path ) {
 																 
-$location.path( path +"/"+$routeParams.kiosk);
+$location.path( path );
 };
   
 	
