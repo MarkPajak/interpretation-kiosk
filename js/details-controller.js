@@ -39,8 +39,7 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 			};
 			
 			$scope.novideo=true
-			$scope.kiosk=$routeParams.kiosk
-			kiosk=$routeParams.kiosk
+		
 			
 			$scope.changeheadingcolor = function() {
 			//kiosk=$scope.kiosk
@@ -49,9 +48,11 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 				 return  color
 			}
 			
+			$scope.kiosk=$routeParams.kiosk			
+			kiosk=$routeParams.kiosk ||"SOMALI-KIOSK"
 			$scope.functionThatReturnsStyle = function() {
 			//kiosk=$scope.kiosk
-			var color="background-color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
+			var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 
 				 return  color
 			}
@@ -88,7 +89,7 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 															$scope.childlinks=child_id_string
 															  
 															  $scope.go = function ( path ) {
-																  
+																
 																  var page = {           
 																	page_id:"1234",
 																	page_name: path,
@@ -99,8 +100,8 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 																
 																
 																send_data.add_log(page)
-																 console.log(path +"/"+$routeParams.kiosk)
-																	$location.path( path +"/"+$routeParams.kiosk);
+																
+																	$location.path( path );
 																};
 
 
