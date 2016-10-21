@@ -22,6 +22,7 @@ md-content {
 }
 
 .panel-default {
+	  background: #868F94 !important;
     border-color:  #868F94 !important;
 }
 
