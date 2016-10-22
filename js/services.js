@@ -111,12 +111,33 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
   
   
 
-museum_objectcatServices.factory('museum_object', ['$resource',
-  function($resource){
-    return $resource(dir+'/id/:museum_objectId.json', {}, {
-      query: {method:'GET', params:{museum_objectId:'museum_objectId'}, isArray:true}
-    });
 
+
+museum_objectcatServices.factory('museum_object', ['$resource','$location',
+  function($resource,$location){
+	  
+	function resourceErrorHandler(response) { 
+
+$location.path( "/"+kiosk );
+ }  
+	  
+	  
+	 return  $resource(dir+'/id/:museum_objectId.json', {} , 
+{
+        'get':    {method:'GET',  params:{museum_objectId:'museum_objectId'},
+                   interceptor : {responseError : resourceErrorHandler}},
+        'save':   {method:'POST'},
+        'query':  {method:'GET',params:{museum_objectId:'museum_objectId'}, isArray:true,  
+                   interceptor : {responseError : resourceErrorHandler}},
+        'remove': {method:'DELETE'},
+        'delete': {method:'DELETE'}
+})
+	 /*
+    return $resource(dir+'/id/:museum_objectId.json', {}, {
+  query: {method:'GET', params:{museum_objectId:'museum_objectId'}, isArray:true,interceptor : {responseError : resourceErrorHandler}}
+    });
+	
+*/
   }]);
   
   museum_objectcatServices.factory('record_id', function() {
