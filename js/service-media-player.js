@@ -34,7 +34,7 @@ museum_objectcatServices.factory('media_player', ['$http', function ($http) {
 														thumb:  dir+'/assets/' + slide.image + '_thumb.jpg',
 														id:museum_object.id ,														
 														gallery:museum_object.gallery ,
-														caption:slide.description ,//museum_object.name,
+														caption:slide.description+"<br>"+slide.copyright  ,//museum_object.name,
 														description:museum_object.description
 														}
 														
