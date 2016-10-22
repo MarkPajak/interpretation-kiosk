@@ -28,13 +28,16 @@ museum_objectcatServices.factory('media_player', ['$http', function ($http) {
 											 name=name.toUpperCase()
 											
 											// if(name.indexOf(filter.toUpperCase())>-1 ||filter=="" ||value.description.toUpperCase().indexOf( filter.toUpperCase())>-1){
+												var description
+												if(!slide.description ){description=""}
+												else{description =slide.description+"<br>" }
 											
 												var img={img: dir+'/assets/' +slide.image + '_detail.jpg', 
 														full:  dir+'/assets/' + slide.image + '_detail.jpg', 
 														thumb:  dir+'/assets/' + slide.image + '_thumb.jpg',
 														id:museum_object.id ,														
 														gallery:museum_object.gallery ,
-														caption:slide.description+"<br>"+slide.copyright  ,//museum_object.name,
+														caption:description+slide.copyright  ,//museum_object.name,
 														description:museum_object.description
 														}
 														
