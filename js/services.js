@@ -71,7 +71,7 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 						$rootScope.updateInterval 
 						console.log(i)
 						if(i>=currentView.length){i=0;$rootScope.i=0}		console.log('switchview:' +currentView[i])
-						$location.path(currentView[i])
+						$location.path(currentView[i]+"/"+kiosk)
 						$rootScope.i++
 					}
 					else{
