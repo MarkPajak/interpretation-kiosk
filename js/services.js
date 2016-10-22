@@ -56,21 +56,25 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 
 				//NB make sure any views called int he screensaver dont contain the screensaver service!
 				 var sharedService = {};
-				 var currentView =['/grid/story','/grid/object','/']
+				 var currentView =['/grid/story','/grid/object','']
 				  $rootScope.i = 0
 				 var timer
-				 
+				  
 				function switchview(i){
 					
 						 var videoElement = $('iframe').contents().find("video").get(0)
+					
+						if(!audioplayer ){var audioplayer=""}
 						 var audioElement_not_playing = audioplayer.paused
-				if  ((!videoElement || videoElement.paused) && audioElement_not_playing) {
+						 
+
+				if  ((!videoElement || videoElement.paused) && !audioplayer|| audioplayer.paused==true) {
 					
 			
-						console.log('no video playing')
+						
 						$rootScope.updateInterval 
 						console.log(i)
-						if(i>=currentView.length){i=0;$rootScope.i=0}		console.log('switchview:' +currentView[i])
+						if(i>=currentView.length){i=0;$rootScope.i=0}		
 						$location.path(currentView[i]+"/"+kiosk)
 						$rootScope.i++
 					}
@@ -91,7 +95,7 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 					if($location.path()!="/screen_saver_images"){	
 							$rootScope.screensaver_on=true
 							console.log('screensaver on')
-							$rootScope.timer = $interval(function() { switchview( $rootScope.i) }, 2 *60*  1000)
+							$rootScope.timer = $interval(function() { switchview( $rootScope.i) }, 2 *60 *  1000)
 					}
 					
 				  

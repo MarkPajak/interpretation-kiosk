@@ -8,20 +8,20 @@ museum_objectcatControllers.controller('gridCtrl',
 										'museum_object_index','image_feed',
 										'museum_objects_by_artist',
 										'artist_list','gallery_list',
-										'$debounce','productService','$location','$interval','$rootScope','screen_saver_loop','detect_dragging','$rootScope',
+										'$debounce','productService','$location','$interval','$rootScope','screen_saver_loop','detect_dragging','app_settings',
 function($scope, $http, $q,$routeParams,museum_object_index,
 										image_feed,
 										museum_objects_by_artist,
 										artist_list,
 										gallery_list,
 										$debounce,
-										productService,  $location, $interval,$rootScope,screen_saver_loop,detect_dragging,$rootScope) {
+										productService,  $location, $interval,$rootScope,screen_saver_loop,detect_dragging,app_settings) {
   var vm = this;
   
 $scope.kiosk=$routeParams.kiosk
 kiosk=$routeParams.kiosk
 $scope.functionThatReturnsStyle = function() {
-kiosk=$scope.kiosk
+
 var color="background-color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
 
      return  color
@@ -50,7 +50,10 @@ $scope.pageClass = 'page-grid';
 };
 
   detect_dragging.drag_handler()
-  
+   if($rootScope.screensaver_on!=true){
+						 console.log('start screensaver')
+					   screen_saver_loop.start_screen_saver();
+					  }
    $scope.go = function ( path ) {
 	 
 	   if( $rootScope.isDragging==false){
