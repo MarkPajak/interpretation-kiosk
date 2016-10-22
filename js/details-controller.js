@@ -75,10 +75,10 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 									
 					
 						   
-									$scope.museum_object = museum_object.get({museum_objectId: $routeParams.museum_objectId}, function(museum_object) {
+									$scope.museum_object = museum_object.get({museum_objectId: $routeParams.museum_objectId},$scope.kiosk, function(museum_object) {
 										
-										
-														console.log(museum_object)
+								
+														
 														var children=museum_object.child
 															console.log('children',children)
 															var child_id_string = "/ids/"
