@@ -14,10 +14,15 @@
   transition-duration: 0.3s;
   -webkit-transition-property: transform;
   transition-property: transform;
+  z-index:300;;
 }
 .hvr-grow-rotate:hover, .hvr-grow-rotate:focus, .hvr-grow-rotate:active {
   -webkit-transform: scale(1.05) rotate(4deg);
   transform: scale(1.05) rotate(4deg);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
+z-index:1000;
 }
 .hvr-grow {
   display: inline-block;
