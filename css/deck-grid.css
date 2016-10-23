@@ -11,6 +11,7 @@ h2 {
 
 .a-card img {
   width: 100%;
+      border: 4px solid white;
 }
 
 html {
