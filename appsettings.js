@@ -1,5 +1,5 @@
 
-
+kiosk="TEST-KIOSK"
 
 museum_objectcatServices.factory('app_settings', ['$http', function ($http) {
 
@@ -13,11 +13,46 @@ museum_objectcatServices.factory('app_settings', ['$http', function ($http) {
 	menu.hide_timeline_button= true
 	menu.hide_slideshow_button= true
 	menu.hide_feedback_button= true
-	kiosk="SOMALI-KIOSK"
-	call_to_action="Select a picture to hear a story.<p> Interviews recorded and edited by volunteers from the Somali community."
+	kiosk="TEST-KIOSK"
+	call_to_action="Select a picture to hear a story."
 	 var app_settings = {'hide_menu':true,'menu':menu,'call_to_action':call_to_action,'kiosk':kiosk};
 	
 	
     return app_settings;
 
 }]);
+
+
+
+function app_start_log(kiosk,ACTION){
+	
+	var urlBase =  'http://markpajak.co.uk/mark/kiosk-feedback/user_analytics.php';
+    var StudentDataOp = {};
+	
+	var page = {           
+				page_id: "1234",
+				page_name: ACTION,
+				page_type:"AUTO",
+				kiosk: kiosk
+				};
+
+    StudentDataOp.getStudents = function () {
+        return $http.get(urlBase+'/GetStudents');
+    };
+
+    StudentDataOp.add_log = function (page) {
+		
+		  return $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : urlBase, // the url where we want to POST
+            data        : page, // our data object
+            dataType    : 'json', // what type of data do we expect back from the server
+             encode          : true
+        })
+		
+		
+	
+}
+  StudentDataOp.add_log(page)
+}
+app_start_log(kiosk,"APP START")
