@@ -7,10 +7,30 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 																   "$timeout",
 																   "productService",
 																   "load_object_record",
-																   "record_id",'$location','$interval','$rootScope','screen_saver_loop','send_data','app_settings','media_player',
-  function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop,send_data,app_settings,media_player) {
+																   "record_id",'$location','$interval','$rootScope','screen_saver_loop','send_data','app_settings','media_player','app_functons',
+  function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop,send_data,app_settings,media_player,app_functons) {
 	  
-	  
+
+$scope.pageClass = 'page-details';	 
+$scope.kiosk=app_settings.kiosk||"null"
+
+$scope.start_screen_saver = function ( ) {
+	 screen_saver_loop.start_screen_saver()
+		
+};
+$scope.functionThatReturnsStyle = function() {
+	return app_functons.functionThatReturnsStyle($routeParams.kiosk)	
+		
+};
+$scope.changeheadingcolor = function() {
+	return app_functons.changeheadingcolor($routeParams.kiosk)	
+		
+};
+
+$scope.menu=app_settings.menu
+$scope.show_menu=app_settings.hide_menu				
+				
+				
 				$scope.log_page_view = function (museum_object) {
 
 									var page = {           
@@ -24,38 +44,23 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 									
 								};
 			
-			$scope.show_menu=app_settings.hide_menu
+			
 			$scope.screensaver_on=false
 			$scope.labels="labels"
 			$scope.directory=dir
 			$scope.firstOne=true;
 			$scope.lastOne=true;
-			$scope.pageClass = 'page-details';	
-			$scope.menu=app_settings.menu
+			
+			
  	
-			 $scope.start_screen_saver = function ( ) {
-				 screen_saver_loop.start_screen_saver()
-					
-			};
+		
 			
 			$scope.novideo=true
 		
 			
-			$scope.changeheadingcolor = function() {
-			//kiosk=$scope.kiosk
-			var color="color:"+ set_color_by_kiosk($routeParams.kiosk)+" !important;"
-
-				 return  color
-			}
+				
 			
-			$scope.kiosk=$routeParams.kiosk			
-			kiosk=$routeParams.kiosk ||"SOMALI-KIOSK"
-			$scope.functionThatReturnsStyle = function() {
-			//kiosk=$scope.kiosk
-			var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
-
-				 return  color
-			}
+		
 									$scope.pagenav = function(next_prev,firstLoad) {
 											
 											var museum_object_id = productService.getProduct_id(next_prev,$routeParams.museum_objectId)

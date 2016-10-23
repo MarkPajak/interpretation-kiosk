@@ -7,32 +7,33 @@ museum_objectcatControllers.controller('feedbackCtrl',  ['$scope',
 																   "$timeout",
 																   "productService",
 																   "load_object_record",
-																   "record_id",'$location','$interval','$rootScope','screen_saver_loop','app_settings',
-  function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop,app_settings) {
+																   "record_id",'$location','$interval','$rootScope','screen_saver_loop','app_settings','app_functons',
+  function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop,app_settings,app_functons) {
 
-$scope.show_menu=app_settings.hide_menu
-$scope.menu=app_settings.menu
 
-$scope.kiosk=app_settings.kiosk
-//kiosk=$routeParams.kiosk
-
-$scope.kiosk=$routeParams.kiosk
-$scope.functionThatReturnsStyle = function() {
-		kiosk=$scope.kiosk
-		var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
-
-			 return  color
-}
-$scope.changeheadingcolor = function() {
-kiosk=$scope.kiosk
-var color="color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
-
-     return  color
-}
-	    
-		
-		
 $scope.pageClass = 'page-grid';
+$scope.kiosk=app_settings.kiosk||"null"
+
+ 
+
+$scope.start_screen_saver = function ( ) {
+	 screen_saver_loop.start_screen_saver()
+		
+};
+$scope.functionThatReturnsStyle = function() {
+	return app_functons.functionThatReturnsStyle($routeParams.kiosk)	
+		
+};
+$scope.changeheadingcolor = function() {
+	return app_functons.changeheadingcolor($routeParams.kiosk)	
+		
+};
+
+$scope.menu=app_settings.menu
+$scope.show_menu=app_settings.hide_menu	
+
+
+
 	  
   
 
@@ -40,10 +41,7 @@ $scope.pageClass = 'page-grid';
   $scope.card = {};
   $scope.card.title = 'test';
 
-  $scope.start_screen_saver = function ( ) {
-	 screen_saver_loop.start_screen_saver()
-		
-};
+ 
 
    $scope.go = function ( path ) {
 																 

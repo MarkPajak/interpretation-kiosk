@@ -105,6 +105,8 @@ animateApp.config(['$routeProvider',
         redirectTo: '/'
       });
   }]);
+  
+  
 
 animateApp.controller('mainController', function($scope) {
     $scope.pageClass = 'page-home';

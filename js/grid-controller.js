@@ -8,34 +8,39 @@ museum_objectcatControllers.controller('gridCtrl',
 										'museum_object_index','image_feed',
 										'museum_objects_by_artist',
 										'artist_list','gallery_list',
-										'$debounce','productService','$location','$interval','$rootScope','screen_saver_loop','detect_dragging','app_settings',
+										'$debounce','productService','$location','$interval','$rootScope','screen_saver_loop','detect_dragging','app_settings','app_functons',
 function($scope, $http, $q,$routeParams,museum_object_index,
 										image_feed,
 										museum_objects_by_artist,
 										artist_list,
 										gallery_list,
 										$debounce,
-										productService,  $location, $interval,$rootScope,screen_saver_loop,detect_dragging,app_settings) {
+										productService,  $location, $interval,$rootScope,screen_saver_loop,detect_dragging,app_settings,app_functons) {
   var vm = this;
   
+  
+$scope.pageClass = 'page-grid';
 $scope.kiosk=$routeParams.kiosk
-kiosk=$routeParams.kiosk
+
+$scope.start_screen_saver = function ( ) {
+	 screen_saver_loop.start_screen_saver()
+		
+};
 $scope.functionThatReturnsStyle = function() {
-
-var color="background-color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
-
-     return  color
-}
+	return app_functons.functionThatReturnsStyle($routeParams.kiosk)	
+		
+};
 $scope.changeheadingcolor = function() {
-kiosk=$scope.kiosk
-var color="color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
+	return app_functons.changeheadingcolor($routeParams.kiosk)	
+		
+};
 
-     return  color
-}
+
+
 	    
 		
 		
-$scope.pageClass = 'page-grid';
+
 	  
   
   
@@ -44,10 +49,7 @@ $scope.pageClass = 'page-grid';
   $scope.card.title = 'test';
   vm.page = 0;
   vm.shots = [];
-  $scope.start_screen_saver = function ( ) {
-	 screen_saver_loop.start_screen_saver()
-		
-};
+
 
   detect_dragging.drag_handler()
    if($rootScope.screensaver_on!=true){

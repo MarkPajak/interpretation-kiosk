@@ -18,10 +18,7 @@ museum_objectcatControllers.controller('museum_objectListCtrl', ['$scope',
 $scope.kiosk=$routeParams.kiosk||"PPL-CR-ICT05"
 kiosk=$routeParams.kiosk
 $scope.functionThatReturnsStyle = function() {
-kiosk=$scope.kiosk
-var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 
-     return  color
 }
 
    $scope.go = function ( path ) {

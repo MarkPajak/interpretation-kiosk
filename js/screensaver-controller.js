@@ -16,26 +16,42 @@ museum_objectcatControllers.controller('screen_saver',
 										'screen_saver_loop',
 										'$location',
 										'$rootScope',
-										'detect_dragging','app_settings',
+										'detect_dragging','app_settings','app_functons',
 function($scope, $http, $q,$routeParams,$location,museum_object_index,image_feed,							museum_objects_by_artist,
 										artist_list,
 										gallery_list,
 										$debounce,
 										productService,
-										screen_saver_loop, $location,$rootScope,detect_dragging,app_settings
+										screen_saver_loop, $location,$rootScope,detect_dragging,app_settings,app_functons
 										) {
+											
+
+											
+$scope.kiosk=app_settings.kiosk||"null"
+$scope.call_to_action=app_settings.call_to_action
+ 
+ 
+$scope.start_screen_saver = function ( ) {
+	 screen_saver_loop.start_screen_saver()
+		
+};
+$scope.functionThatReturnsStyle = function() {
+	return app_functons.functionThatReturnsStyle($routeParams.kiosk)	
+		
+};
+$scope.changeheadingcolor = function() {
+	return app_functons.changeheadingcolor($routeParams.kiosk)	
+		
+};
+
+				
+
+					
   var vm = this;
   
-$scope.kiosk=app_settings.kiosk||"null"
-kiosk=$routeParams.kiosk
-$scope.functionThatReturnsStyle = function() {
 
-var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 
-     return  color
-}
 
- $scope.call_to_action=app_settings.call_to_action
     $scope.card = {};
     $scope.card.title = 'test';
     vm.page = 0;
@@ -150,9 +166,6 @@ var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
 						   }
 					};
 
-					  $scope.start_screen_saver = function ( ) {
-						 screen_saver_loop.start_screen_saver()
-							
-					};
+					
 						 $scope.pageClass = 'page-contact';				
 }]);

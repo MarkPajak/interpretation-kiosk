@@ -6,6 +6,35 @@
 
 var museum_objectcatServices = angular.module('museum_objectcatServices', ['ngResource']);
 
+
+
+
+museum_objectcatServices.factory('app_functons', [ '$rootScope', function ( $rootScope) {
+
+var app_functons=[]
+
+app_functons.changeheadingcolor = function(kiosk) {
+
+var color="color:"+ set_color_by_kiosk(kiosk)+";"
+
+return  color
+}	
+
+app_functons.functionThatReturnsStyle = function(kiosk) {
+
+var color="background-color:"+ set_color_by_kiosk(kiosk)+";"
+
+return  color
+}
+
+   
+return app_functons
+
+}]);
+
+
+
+
 museum_objectcatServices.factory('detect_dragging', function($rootScope) {
 	
 var detect_dragging=[]
