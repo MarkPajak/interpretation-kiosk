@@ -149,7 +149,7 @@ $(document).scrollTop(0);
 		  <a  style="{{changeheadingcolor()}}"   href="#id/{{irn.id}}/{{kiosk}}"  >
             <div class="img hvr-grow" style="background-image: url({{directory}}/assets/{{irn.image}}_detail.jpg);"></div>
             <div class="inside">
-              <h3>{{irn.name}}</h3>
+              <h3 style="{{changeheadingcolor()}}" >{{irn.name}}</h3>
               <div class="description" ng-bind-html="::irn.description | unsafe"></div>
             </div>
 		</a>
