@@ -28,7 +28,10 @@ $scope.changeheadingcolor = function() {
 	return app_functons.changeheadingcolor($routeParams.kiosk)	
 		
 };
-
+if($rootScope.screensaver_on!=true){
+console.log('start screensaver')
+screen_saver_loop.start_screen_saver();
+}
 
 $scope.menu=app_settings.menu
 $scope.show_menu=app_settings.hide_menu				

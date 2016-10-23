@@ -42,7 +42,10 @@ $scope.changeheadingcolor = function() {
 	return app_functons.changeheadingcolor($routeParams.kiosk)	
 		
 };
-
+if($rootScope.screensaver_on!=true){
+console.log('start screensaver')
+screen_saver_loop.start_screen_saver();
+}
 				
 
 					
@@ -147,10 +150,7 @@ $scope.changeheadingcolor = function() {
 					vm.loadMoreShots();	
 	
 
-					 if($rootScope.screensaver_on!=true){
-						 console.log('start screensaver')
-					   screen_saver_loop.start_screen_saver();
-					  }
+					
 					detect_dragging.drag_handler()
 					   $scope.go = function ( path ) {
 						 

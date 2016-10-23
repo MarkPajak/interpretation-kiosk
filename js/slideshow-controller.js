@@ -9,7 +9,7 @@ kiosk=$routeParams.kiosk
 $scope.kiosk=app_settings.kiosk||"null"
 $scope.call_to_action=app_settings.call_to_action
  
-
+$scope.screensaver_on=false
 $scope.start_screen_saver = function ( ) {
 
 	 screen_saver_loop.start_screen_saver()
