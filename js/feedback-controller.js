@@ -13,9 +13,9 @@ museum_objectcatControllers.controller('feedbackCtrl',  ['$scope',
 
 $scope.pageClass = 'page-grid';
 $scope.kiosk=$routeParams.kiosk //menu button
- 
-
-$scope.start_screen_saver = function ( ) {
+$scope.call_to_action=app_settings.call_to_action
+kiosk_path=$routeParams.kiosk
+$scope.start_screen_saver = function () {
 	 screen_saver_loop.start_screen_saver()
 		
 };

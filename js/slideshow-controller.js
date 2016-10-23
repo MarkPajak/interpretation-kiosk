@@ -6,28 +6,24 @@ museum_objectcatControllers.controller('slideshowCtrl',
 		// screen_saver_loop.start_screen_saver()
 			 $scope.kiosk=app_settings.kiosk||"null"
 kiosk=$routeParams.kiosk
-$scope.kiosk=$routeParams.kiosk
-kiosk=$routeParams.kiosk
-$scope.functionThatReturnsStyle = function() {
-kiosk=$scope.kiosk
-var color="background-color:"+ set_color_by_kiosk(kiosk)+" !important;"
+$scope.kiosk=app_settings.kiosk||"null"
+$scope.call_to_action=app_settings.call_to_action
+ 
 
-     return  color
-}
+$scope.start_screen_saver = function ( ) {
 
-  $scope.start_screen_saver = function ( ) {
 	 screen_saver_loop.start_screen_saver()
 		
 };
-
-
+$scope.functionThatReturnsStyle = function() {
+	return app_functons.functionThatReturnsStyle($routeParams.kiosk)	
+		
+};
 $scope.changeheadingcolor = function() {
-kiosk=$scope.kiosk
+	return app_functons.changeheadingcolor($routeParams.kiosk)	
+		
+};
 
-var color="color:"+ set_color_by_kiosk($routeParams.kiosk)+";"
-
-     return  color
-}
 	 
 
    $scope.go = function ( path ) {

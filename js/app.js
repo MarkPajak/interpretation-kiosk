@@ -45,6 +45,7 @@ var animateApp = angular.module('animateApp', [
 
 animateApp.config(['$routeProvider',
   function($routeProvider) {
+	
     $routeProvider.
       when('/screen_saver_images', {
         templateUrl: 'html/screensaver.html',
@@ -95,15 +96,17 @@ animateApp.config(['$routeProvider',
          templateUrl: 'html/page-feedback.html',
         controller: 'feedbackCtrl'
       }).
-	   when('/', {
+	   when('/:kiosk', {
          templateUrl: 'html/screensaver.html',
         controller: 'screen_saver'
       }).
 	  
-	  
+	   
       otherwise({
-        redirectTo: '/'
+        redirectTo: '/:kiosk'
       });
+	  
+	 
   }]);
   
   
@@ -135,3 +138,4 @@ function shuffle(a) {
         a[j] = x;
     }
 }
+

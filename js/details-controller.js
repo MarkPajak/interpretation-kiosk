@@ -14,8 +14,9 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 $scope.pageClass = 'page-details';	 
 $scope.kiosk=$routeParams.kiosk //menu button
 kiosk=$routeParams.kiosk //failsafe return
-
-$scope.start_screen_saver = function ( ) {
+$scope.call_to_action=app_settings.call_to_action
+kiosk_path=$routeParams.kiosk
+$scope.start_screen_saver = function () {
 	 screen_saver_loop.start_screen_saver()
 		
 };
@@ -27,6 +28,7 @@ $scope.changeheadingcolor = function() {
 	return app_functons.changeheadingcolor($routeParams.kiosk)	
 		
 };
+
 
 $scope.menu=app_settings.menu
 $scope.show_menu=app_settings.hide_menu				

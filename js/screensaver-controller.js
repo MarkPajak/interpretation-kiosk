@@ -29,9 +29,8 @@ function($scope, $http, $q,$routeParams,$location,museum_object_index,image_feed
 											
 $scope.kiosk=app_settings.kiosk||"null"
 $scope.call_to_action=app_settings.call_to_action
- 
- 
-$scope.start_screen_saver = function ( ) {
+kiosk_path=$routeParams.kiosk
+$scope.start_screen_saver = function () {
 	 screen_saver_loop.start_screen_saver()
 		
 };
