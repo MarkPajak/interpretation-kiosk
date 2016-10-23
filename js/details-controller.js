@@ -12,7 +12,8 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 	  
 
 $scope.pageClass = 'page-details';	 
-$scope.kiosk=app_settings.kiosk||"null"
+$scope.kiosk=$routeParams.kiosk //menu button
+kiosk=$routeParams.kiosk //failsafe return
 
 $scope.start_screen_saver = function ( ) {
 	 screen_saver_loop.start_screen_saver()
@@ -106,7 +107,8 @@ $scope.show_menu=app_settings.hide_menu
 																
 																send_data.add_log(page)
 																
-																	$location.path( path );
+																	$location.path( path);
+																	
 																};
 
 

@@ -12,8 +12,7 @@ museum_objectcatControllers.controller('feedbackCtrl',  ['$scope',
 
 
 $scope.pageClass = 'page-grid';
-$scope.kiosk=app_settings.kiosk||"null"
-
+$scope.kiosk=$routeParams.kiosk //menu button
  
 
 $scope.start_screen_saver = function ( ) {
@@ -29,6 +28,13 @@ $scope.changeheadingcolor = function() {
 		
 };
 
+
+$scope.go = function ( path ) {
+																 
+$location.path( path);
+};
+  
+
 $scope.menu=app_settings.menu
 $scope.show_menu=app_settings.hide_menu	
 
@@ -43,11 +49,6 @@ $scope.show_menu=app_settings.hide_menu
 
  
 
-   $scope.go = function ( path ) {
-																 
-$location.path( path );
-};
-  
 	
 	   
 	
