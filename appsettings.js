@@ -13,9 +13,10 @@ museum_objectcatServices.factory('app_settings', ['$http', function ($http) {
 	menu.hide_timeline_button= true
 	menu.hide_slideshow_button= true
 	menu.hide_feedback_button= true
+	screensaver=['1','']
 	kiosk="TEST-KIOSK"
 	call_to_action="Select a picture to hear a story."
-	 var app_settings = {'hide_menu':true,'menu':menu,'call_to_action':call_to_action,'kiosk':kiosk};
+	 var app_settings = {'hide_menu':true,'menu':menu,'call_to_action':call_to_action,'kiosk':kiosk,screensaver:screensaver};
 	
 	
     return app_settings;
