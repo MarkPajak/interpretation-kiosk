@@ -16,6 +16,8 @@ $scope.kiosk=$routeParams.kiosk //menu button
 kiosk=$routeParams.kiosk //failsafe return
 $scope.call_to_action=app_settings.call_to_action
 kiosk_path=$routeParams.kiosk
+screensaver=app_settings.screensaver //services
+
 $scope.start_screen_saver = function () {
 	 screen_saver_loop.start_screen_saver()
 		

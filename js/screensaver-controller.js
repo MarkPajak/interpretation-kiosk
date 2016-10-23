@@ -30,6 +30,7 @@ function($scope, $http, $q,$routeParams,$location,museum_object_index,image_feed
 $scope.kiosk=app_settings.kiosk||"null"
 $scope.call_to_action=app_settings.call_to_action
 kiosk_path=$routeParams.kiosk
+screensaver=app_settings.screensaver //services
 $scope.start_screen_saver = function () {
 	 screen_saver_loop.start_screen_saver()
 		

@@ -100,7 +100,10 @@ animateApp.config(['$routeProvider',
          templateUrl: 'html/screensaver.html',
         controller: 'screen_saver'
       }).
-	  
+	   when('/1/:kiosk', {
+         templateUrl: 'html/screensaver.html',
+        controller: 'screen_saver'
+      }).
 	   
       otherwise({
         redirectTo: '/:kiosk'
