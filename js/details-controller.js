@@ -100,7 +100,7 @@ $scope.show_menu=app_settings.hide_menu
 																	page_id:"1234",
 																	page_name: path,
 																	page_type:'button click',
-																	kiosk: $scope.kiosk
+																	kiosk: app_settings.kiosk
 																};
 																
 																
