@@ -93,11 +93,11 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 					
 						 var videoElement = $('iframe').contents().find("video").get(0)
 					
-						if(!audioplayer ){var audioplayer=""}
+						//if(!audioplayer ){var audioplayer=""}
 						 var audioElement_not_playing = audioplayer.paused
 						 
 
-				if  ((!videoElement || videoElement.paused) && !audioplayer|| audioplayer.paused==true) {
+				if  ((!videoElement || videoElement.paused) && audioplayer.paused==true) {
 					
 			
 						
