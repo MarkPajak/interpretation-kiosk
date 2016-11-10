@@ -216,6 +216,7 @@ $scope.changeheadingcolor = function() {
 										page_id: data.id,
 										page_name: data.name,
 										page_type: 'slideshow',
+										kiosk_id:$routeParams.kiosk,
 										kiosk: $scope.kiosk
 									};
 									
