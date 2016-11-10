@@ -45,6 +45,7 @@ $scope.show_menu=app_settings.hide_menu
 										page_id: museum_object.id,
 										page_name: museum_object.name,
 										page_type: museum_object.type[0],
+										kiosk_id:$routeParams.kiosk,
 										kiosk: app_settings.kiosk
 									};
 									
