@@ -34,6 +34,7 @@ function app_start_log(kiosk,ACTION){
 				page_id: "1234",
 				page_name: ACTION,
 				page_type:"AUTO",
+				kiosk_id:"kiosk_id",
 				kiosk: kiosk
 				};
 
