@@ -39,6 +39,13 @@ $scope.menu=app_settings.menu
 $scope.show_menu=app_settings.hide_menu				
 				
 				
+	  	$scope.killsound = function () {
+				
+				 var videoElement = $('iframe').contents().find("video").get(0)
+				videoElement.volume =0
+									
+		};	
+	  
 				$scope.log_page_view = function (museum_object) {
 
 									var page = {           
