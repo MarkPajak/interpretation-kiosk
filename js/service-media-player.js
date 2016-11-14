@@ -48,7 +48,7 @@ museum_objectcatServices.factory('media_player', ['$http', function ($http) {
 												if(museum_object.video) {
 														img["video"] =  dir+"assets/videos/"+museum_object.video[0].video+".mp4";
 														
-
+														$('.volume').show()
 												}
 												if(museum_object.audio) {
 														var audiohtml='<div data-img:"'+dir+'/assets/' + museum_object.images[0].image + '_detail.jpg">';
