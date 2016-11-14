@@ -8,11 +8,30 @@
 
 .icon{
     width: 50px;}
+	
+.volume{
+display:none;
+width: 90px;
+    top: 100px;
+    position: absolute;
+    background-image: url(http://upload.wikimedia.org/wikipedia/commons/3/3f/Mute_Icon.svg);
+    background-size: 60px;
+    background-repeat: no-repeat;
+    padding: 20px;
+    background-position-x: 20px;
+	   background-position-y: 10px;
+    width: 80px;
+    width: 100px;
+    height: 80px;
+	}
 </style>
+
 <div class=" menuButtons  panel-default">
   <div class="panel-body">
 
 <button  ng-hide="{{menu.hide_browse_button}}"   style="{{functionThatReturnsStyle()}}" ng-click="go(kiosk); screensaverOff();" "  class="hvr-grow btn btn-primary btn-lg"><img class="icon" src="img/back_arrow.png"/> </button>
+
+<button  ng-hide="{{menu.hide_browse_button}}"   style="{{functionThatReturnsStyle()}}" ng-click="killsound()"   class="icon btn  btn-lg volume"></button>
 
 <button    ng-hide="{{menu.hide_stories_button}}" style="{{functionThatReturnsStyle()}}"  ng-click="go('/grid/story');screensaverOff()" type="stories" class="btn btn-primary btn-lg">Stories</button>
 
