@@ -36,7 +36,7 @@ function app_start_log(kiosk,ACTION){
 				page_type:"AUTO",
 				kiosk_id:"kiosk_id",
 				kiosk: kiosk,
-				app_type="INTERPRETATION-KIOSK"
+				app_type:"INTERPRETATION-KIOSK"
 				};
 
     StudentDataOp.getStudents = function () {
