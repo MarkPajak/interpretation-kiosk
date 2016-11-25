@@ -94,7 +94,7 @@ $(document).scrollTop(0);
 		ng-src="{{directory}}/assets/{{img.image}}_detail.jpg"
 		ng-repeat="img in museum_object.images"
 		ng-class="{active: mainImageUrl==img.image}" ><div  style="{{video_button_style()}}" /></a>
-		<div       id="{{museum_object.id}}_fotorama" ng-click="screensaverOff()" class="fotorama featurette-image img-responsive pull-right""
+		<div       id="{{museum_object.id}}_fotorama" ng-click="screensaverOff()" class="fotorama featurette-image img-responsive "
 			data-shadows="true"
 		    data-thumbborderwidth="6"
 		   
