@@ -90,7 +90,7 @@ $(document).scrollTop(0);
 
 		<a  style="display:none" href="#/slideshow/ids/{{museum_object.id}}/{{kiosk}}">
 		<img  style="{{functionThatReturnsStyle()}}" 
-		ng-pinch-zoom max-scale=“4” class="museum_object featurette-image img-responsive pull-right" 
+		ng-pinch-zoom max-scale=“4” class="museum_object featurette-image img-responsive" 
 		ng-src="{{directory}}/assets/{{img.image}}_detail.jpg"
 		ng-repeat="img in museum_object.images"
 		ng-class="{active: mainImageUrl==img.image}" ><div  style="{{video_button_style()}}" /></a>
