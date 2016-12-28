@@ -95,7 +95,8 @@ screen_saver_loop.start_screen_saver();
 		 
 		 // shuffle(museum_objects);
 		 angular.forEach(museum_objects , function(object, key) {
-	
+		 
+	if(object.description!=null ){
 	//if(key>page*max_objects_in_page){
 						  images_to_add.push({
 								"id": object.id,
@@ -121,6 +122,7 @@ screen_saver_loop.start_screen_saver();
 								},
 								"team": null
 							  })
+							  }
 							  
 		//  }
 					  })
