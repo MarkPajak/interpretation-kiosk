@@ -125,7 +125,7 @@ $(document).scrollTop(0);
 
 <!-- Page Content -->
 
-<div class="container marketing">
+<div class="container marketing" ng-hide="museum_object.images.length==1 && museum_object.child[0].images[0].description!=''">
   <hr class="featurette-divider">
   <div class="featurette">
 	<!-- story Featurette -->
@@ -173,7 +173,7 @@ $(document).scrollTop(0);
 
 	</div>
 
-<div  class="container" ng-hide="museum_object.child.length==0">
+<div  class="container" ng-show="museum_object.child[0]" >
  <h2>Read More about this:<h2>
  <div class="panel-body">
     <div
