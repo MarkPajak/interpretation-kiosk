@@ -39,6 +39,7 @@ left:87%;
 color:blue !important;
 }
 .container{
+    margin-top: 50px;
 background-color:white;
 }
 
@@ -91,7 +92,7 @@ $(document).scrollTop(0);
 
 
 <div class="container marketing">
-  <hr class="featurette-divider">
+  <br>
   <div class="featurette">
    <img  style="{{functionThatReturnsStyle()}}" 
 		ng-pinch-zoom max-scale=“4” class="museum_object featurette-image img-responsive" 
@@ -126,7 +127,7 @@ $(document).scrollTop(0);
 <!-- Page Content -->
 
 <div class="container marketing" ng-hide="museum_object.images.length==1 && museum_object.child[0].images[0].description!=''">
-  <hr class="featurette-divider">
+ 
   <div class="featurette">
 	<!-- story Featurette -->
 		<a  style="display:none" href="#/slideshow/ids/{{museum_object.id}}/{{kiosk}}">
