@@ -92,7 +92,11 @@ screen_saver_loop.start_screen_saver();
 		 
 		 
 		 objectsloaded_in_current_batch=0;
-		 
+		     
+		 if(museum_objects.length<20){
+		 museum_objects=museum_objects.concat(museum_objects)
+		 }
+			 
 		 // shuffle(museum_objects);
 		 angular.forEach(museum_objects , function(object, key) {
 		 
