@@ -16,10 +16,9 @@
 }
 
 .fotorama {
-    min-width: 1px;
+   
     overflow: hidden;
-    right: -50px;
-	padding-bottom:20px;
+	
     position: relative;
 }
 .featurette-image{
@@ -78,11 +77,43 @@ background-color:white;
     background-position-x: -10px;
     background-position-y: -70PX;
 	}
+.slideshow{
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
 
+   
+}
 </style>
 <script>
 $(document).scrollTop(0);
 </script>
+
+
+<div class="container marketing">
+  <hr class="featurette-divider">
+  <div class="featurette">
+   <img  style="{{functionThatReturnsStyle()}}" 
+		ng-pinch-zoom max-scale=“4” class="museum_object featurette-image img-responsive" 
+		ng-src="{{directory}}/assets/{{img.image}}_detail.jpg"
+		ng-repeat="img in museum_object.images"
+		ng-class="{active: mainImageUrl==img.image}" ><div  style="{{video_button_style()}}" />
+
+    <h2 class="featurette-heading">{{museum_object.name}}</h2><span ng-hide="museum_object.summary==null" class="text-muted"><h3>"{{museum_object.summary}}"</h3></span>
+		<div  ng-repeat="artist in museum_object.artists" class="featurette" id="about">	
+		<p class="featurette-heading">{{artist.name}} 	</p>
+		<p ng-if="artist.birth && artist.birth " class="lead angular-with-newlines">birth {{artist.birth}}, death {{artist.death}}	</p>
+		</div>
+
+
+		<h4 class="lead angular-with-newlines">{{museum_object.number}}</h4>
+		<h4 class="lead angular-with-newlines">{{museum_object.method}}</h4>	
+		<br>		
+		<p class="lead angular-with-newlines ">{{museum_object.description}}</p>
+		<p class="lead angular-with-newlines ">{{museum_object.credit_line}}</p>
+  </div>
+  </div>
+
 
 <div class="panel-body ">
 
@@ -93,25 +124,24 @@ $(document).scrollTop(0);
 </div>
 
 <!-- Page Content -->
-<div class="container" >
-	<!-- story Featurette -->
-	<div class="featurette" >
 
+<div class="container marketing">
+  <hr class="featurette-divider">
+  <div class="featurette">
+	<!-- story Featurette -->
 		<a  style="display:none" href="#/slideshow/ids/{{museum_object.id}}/{{kiosk}}">
 		<img  style="{{functionThatReturnsStyle()}}" 
-		ng-pinch-zoom max-scale=“4” class="museum_object featurette-image img-responsive" 
+		ng-pinch-zoom max-scale=“4”
 		ng-src="{{directory}}/assets/{{img.image}}_detail.jpg"
 		ng-repeat="img in museum_object.images"
 		ng-class="{active: mainImageUrl==img.image}" ><div  style="{{video_button_style()}}" /></a>
-		<div       id="{{museum_object.id}}_fotorama" ng-click="screensaverOff()" class="fotorama featurette-image img-responsive "
+		<div       id="{{museum_object.id}}_fotorama" ng-click="screensaverOff()" class="fotorama slideshow"
 			data-shadows="true"
 		    data-thumbborderwidth="6"
-		   
 		    data-stopautoplayontouch="true"
 		    data-arrows="always"
 	        data-click="false"
     	    data-auto="true"
-	       
             data-autoplay="true"
             data-maxheight="100%"
 	        data-nav="thumbs"
@@ -120,26 +150,13 @@ $(document).scrollTop(0);
 		    data-loop="true"
 		    data-shuffle="{{shuffle}}"
 		    data-allowfullscreen="true"
-		    data-keyboard="true"
-		
-		
-></div>
+		    data-keyboard="true"	
+>
+</div>
+</div>
+</div>
 
-		<h2  class="featurette-heading">{{museum_object.name}}</h2>
-		
-		
-		<p class="text-muted" ng-hide="museum_object.summary==null">"{{museum_object.summary}}"</p>
-	
-		<div  ng-repeat="artist in museum_object.artists" class="featurette" id="about">	
-		<p class="featurette-heading">{{artist.name}} 	</p>
-		<p ng-if="artist.birth && artist.birth " class="lead angular-with-newlines">birth {{artist.birth}}, death {{artist.death}}	</p>
-		</div>
-		<h4 class="lead angular-with-newlines">{{museum_object.number}}</h4>
-		<h4 class="lead angular-with-newlines">{{museum_object.method}}</h4>	
-		<br>		
-		<p class="lead angular-with-newlines ">{{museum_object.description}}</p>
-		<p class="lead angular-with-newlines ">{{museum_object.credit_line}}</p>
-	</div>
+
 	<hr ng-hide="museum_object.summary==null" class="featurette-divider" >  
 	<!-- image Featurette -->
 	
