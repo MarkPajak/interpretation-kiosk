@@ -61,25 +61,28 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .feedbackButtons button{
+position: fixed;
      font-family: 'AmericanTypewriterStd-Med';
     text-align: center;
     background: thite;
     background-color: #4A9C9B;
-    position: absolute;
+    
     bottom: -877px;
     z-index: 600;
     right: 1%;
     /* width: 190px; */
        font-size: 30px;
     height: 60px;
+	bottom:100px;
+	right:100px;
 }
 .action_Buttons button{
-	
+	position: fixed;
     font-family: 'AmericanTypewriterStd-Med';
     text-align: left;
     background: thite;
     background-color: #4A9C9B;
-    position: absolute;
+  
     top: 390px;
     z-index: 6000;
     right: 10%;
