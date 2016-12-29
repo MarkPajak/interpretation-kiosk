@@ -1,6 +1,6 @@
 <div  ng-hide="{{}}" ng-hide="currentPath === '/'"  ng-include="'html/menu.html'"></div>
 
-  <md-content id="content-scroller" >
+ 
 <style>
 /* in the css file or in a style block */
 .angular-with-newlines {
@@ -82,7 +82,9 @@ background-color:white;
  display: block;
   margin-left: auto;
   margin-right: auto;
-
+#videobox{
+display:none;
+}
    
 }
 </style>
@@ -90,6 +92,36 @@ background-color:white;
 $(document).scrollTop(0);
 </script>
 
+<div class="container marketing"  id="videobox" >
+ 
+  <div class="featurette">
+	<!-- story Featurette -->
+		<a  style="display:none" href="#/slideshow/ids/{{museum_object.id}}/{{kiosk}}">
+		<img  style="{{functionThatReturnsStyle()}}" 
+		ng-pinch-zoom max-scale=“4”
+		ng-src="{{directory}}/assets/{{img.image}}_detail.jpg"
+		ng-repeat="img in museum_object.images"
+		ng-class="{active: mainImageUrl==img.image}" ><div  style="{{video_button_style()}}" /></a>
+		<div       id="{{museum_object.id}}_fotorama" ng-click="screensaverOff()" class="fotorama slideshow"
+			data-shadows="true"
+		    data-thumbborderwidth="6"
+		    data-stopautoplayontouch="true"
+		    data-arrows="always"
+	        data-click="false"
+    	    data-auto="true"
+            data-autoplay="true"
+            data-maxheight="100%"
+	        data-nav="thumbs"
+		    data-thumbwidth="125px";
+		    data-thumbheight="125px";
+		    data-loop="true"
+		    data-shuffle="{{shuffle}}"
+		    data-allowfullscreen="true"
+		    data-keyboard="true"	
+>
+</div>
+</div>
+</div>
 
 <div class="container marketing">
   <br>
@@ -126,7 +158,7 @@ $(document).scrollTop(0);
 
 <!-- Page Content -->
 
-<div class="container marketing" ng-hide="museum_object.images.length==1 && museum_object.child[0].images[0].description!='' && !museum_object.video[0]">
+<div class="container marketing" ng-hide="museum_object.images.length==1 && museum_object.child[0].images[0].description!=''">
  
   <div class="featurette">
 	<!-- story Featurette -->
@@ -214,7 +246,7 @@ $(document).scrollTop(0);
   </form>
   </div>
  </md-toolbar>
-  </md-content>
+
 
 
  
