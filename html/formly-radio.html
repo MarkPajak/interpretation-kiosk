@@ -1,6 +1,13 @@
 <style>
 
-
+.radio label{
+    min-height: 20px;
+    padding-left: 110px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+    left: -30px;
+}
 h2 {
 	color: #AAAAAA;
 	font-weight: normal;
@@ -103,11 +110,15 @@ input[type=radio]:checked ~ label{
              tabindex="0"
 			 name="selector"
              ng-value="option[to.valueProp || 'value']"
-             ng-model="model[options.key]">
+             ng-model="model[options.key]" >
     <label for="{{id + '_'+ $index}}">{{option[to.labelProp || 'name']}}</label>    
-    <div class="check"></div>
+    <div class="check" ng-data="{{id + '_'+ $index}}" ng-click="clickUpload(this)"></div>
+	</input>
   </li>
 </ul>
 </div>
+
+
+
 	
 
