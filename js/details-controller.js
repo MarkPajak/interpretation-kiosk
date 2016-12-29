@@ -9,15 +9,16 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
 																   "load_object_record",
 																   "record_id",'$location','$interval','$rootScope','screen_saver_loop','send_data','app_settings','media_player','app_functons',
   function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop,send_data,app_settings,media_player,app_functons) {
-	  
-
+	  	
+	
+$('#videobox').hide()
 $scope.pageClass = 'page-details';	 
 $scope.kiosk=$routeParams.kiosk //menu button
 kiosk=$routeParams.kiosk //failsafe return
 $scope.call_to_action=app_settings.call_to_action
 kiosk_path=$routeParams.kiosk
 screensaver=app_settings.screensaver //services
-
+$scope.video=true
 $scope.start_screen_saver = function () {
 	 screen_saver_loop.start_screen_saver()
 		
@@ -76,7 +77,7 @@ $scope.show_menu=app_settings.hide_menu
 			
 				
 			
-		
+		/*
 									$scope.pagenav = function(next_prev,firstLoad) {
 											
 											var museum_object_id = productService.getProduct_id(next_prev,$routeParams.museum_objectId)
@@ -86,17 +87,23 @@ $scope.show_menu=app_settings.hide_menu
 											if(museum_object_id>0 && !firstLoad){
 													$scope.museum_object = museum_object.get({museum_objectId: museum_object_id}, function(museum_object) {
 													load_object_record.load_object_record(museum_object)
-	
+
 													})
 											}
 											$scope.add_nav_buttons()
 											
 									}
+									*/
 									
 									
 					
-						   
-									$scope.museum_object = museum_object.get({museum_objectId: $routeParams.museum_objectId},$scope.kiosk, function(museum_object) {
+	$scope.hidevideo=true					   
+	$scope.museum_object = museum_object.get({museum_objectId: $routeParams.museum_objectId},$scope.kiosk, function(museum_object) {
+									
+										if(museum_object.video){
+										$('#videobox').show()
+										}
+										
 										
 								
 														
@@ -120,7 +127,7 @@ $scope.show_menu=app_settings.hide_menu
 																};
 																
 																
-																
+															
 																send_data.add_log(page)
 																
 																	$location.path( path);
@@ -145,6 +152,7 @@ $scope.show_menu=app_settings.hide_menu
 											};
 											
 											
+											
 											$scope.no_audio=false
 											$scope.audiohtml=media_player.play_video($scope.directory,museum_object)
 											
@@ -159,13 +167,15 @@ $scope.show_menu=app_settings.hide_menu
 																};
 												$scope.log_page_view(museum_object)
 												//return false
+												
 											})
 											
-											
+												console.log($scope.museum_object)
 									
 
 									
 									
+								
 									
 									$scope.add_nav_buttons=function(){
 									try{
@@ -186,10 +196,10 @@ $scope.show_menu=app_settings.hide_menu
 									}
 									
 									}
-									$scope.add_nav_buttons()
+									//$scope.add_nav_buttons()
 									
 									
-									
+								
 
 							
 		
