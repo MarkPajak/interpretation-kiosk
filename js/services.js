@@ -90,11 +90,13 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 				 var timer
 				 
 				function switchview(i){
-					
+					var audioplayer
 						 var videoElement = $('iframe').contents().find("video").get(0)
 					
-						//if(!audioplayer ){var audioplayer=""}
-						 var audioElement_not_playing = audioplayer.paused
+						if(!audioplayer ){var audioplayer=[]
+						audioplayer.paused=true
+						}
+				var audioElement_not_playing = audioplayer.paused
 						 
 
 				if  ((!videoElement || videoElement.paused) && audioplayer.paused==true) {
@@ -127,7 +129,7 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 					if($location.path()!="/screen_saver_images"){	
 							$rootScope.screensaver_on=true
 						
-							$rootScope.timer = $interval(function() { switchview( $rootScope.i) }, 3   * 60*   1000)
+							$rootScope.timer = $interval(function() { switchview( $rootScope.i) },3   * 60*   1000)
 					}
 					
 				  
@@ -160,13 +162,8 @@ $location.path( "/"+kiosk );
 	  
 	 return  $resource(dir+'/id/:museum_objectId.json', {} , 
 {
-        'get':    {method:'GET',  params:{museum_objectId:'museum_objectId'},
-                   interceptor : {responseError : resourceErrorHandler}},
-        'save':   {method:'POST'},
-        'query':  {method:'GET',params:{museum_objectId:'museum_objectId'}, isArray:true,  
-                   interceptor : {responseError : resourceErrorHandler}},
-        'remove': {method:'DELETE'},
-        'delete': {method:'DELETE'}
+        'get':    {method:'GET',  params:{museum_objectId:'museum_objectId'}}
+   
 })
 	 /*
     return $resource(dir+'/id/:museum_objectId.json', {}, {
@@ -219,9 +216,6 @@ museum_objectcatServices.factory('productService', function() {
   console.log('looking for '+museum_object_id)
    
 	 if(next_prev=="next"){
-	 
-	
-	
      for (var key in productList) {
 	
 			if (productList[key].id){
