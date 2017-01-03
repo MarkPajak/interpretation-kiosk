@@ -78,7 +78,7 @@ detect_dragging.drag_handler= function(){
 
 
 
-museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$location,$interval) {
+museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$location,$interval,app_settings) {
 	
 
 
@@ -106,7 +106,7 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 						$rootScope.updateInterval 
 						console.log(i)
 						if(i>=screensaver.length){i=0;$rootScope.i=0}
-						app_start_log(kiosk,"SCREENSAVER")						
+						app_start_log(app_settings.kiosk,"SCREENSAVER")						
 						$location.path(screensaver[i]+"/"+ kiosk_path)
 						$rootScope.i++
 					}
@@ -129,7 +129,7 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 					if($location.path()!="/screen_saver_images"){	
 							$rootScope.screensaver_on=true
 						
-							$rootScope.timer = $interval(function() { switchview( $rootScope.i) },3   * 60*   1000)
+							$rootScope.timer = $interval(function() { switchview( $rootScope.i) },5   * 60*   1000)
 					}
 					
 				  
