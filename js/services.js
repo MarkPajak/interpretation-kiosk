@@ -129,7 +129,7 @@ museum_objectcatServices.factory('screen_saver_loop', function($rootScope,$locat
 					if($location.path()!="/screen_saver_images"){	
 							$rootScope.screensaver_on=true
 						
-							$rootScope.timer = $interval(function() { switchview( $rootScope.i) },5   * 60*   1000)
+							$rootScope.timer = $interval(function() { switchview( $rootScope.i) },7   * 60*   1000)
 					}
 					
 				  
