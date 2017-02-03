@@ -39,11 +39,24 @@ screen_saver_loop.start_screen_saver();
 $scope.menu=app_settings.menu
 $scope.show_menu=app_settings.hide_menu				
 				
-				
+		var sound = "off"	
 	  	$scope.killsound = function () {
-				$('audio')[0].volume=0
-				 var videoElement = $('iframe').contents().find("video").get(0)
-				videoElement.volume =0
+		
+		var videoElement = $('iframe').contents().find("video").get(0)
+		
+				if(sound=="off"){
+						$('audio')[0].volume=0
+						if(videoElement) videoElement.volume =0
+						sound="on"
+				}
+				else
+				{
+				$('audio')[0].volume=1			
+					if(videoElement) videoElement.volume =1
+				sound="off"		
+				
+				}
+				
 									
 		};	
 	  
