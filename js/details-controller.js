@@ -11,7 +11,7 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope',
   function($scope, $routeParams, museum_object,$sce,$timeout,productService,load_object_record,record_id ,$location, $interval,$rootScope,screen_saver_loop,send_data,app_settings,media_player,app_functons) {
 	  	
 	
-$('#videobox').hide()
+//$('#videobox').hide()
 $scope.pageClass = 'page-details';	 
 $scope.kiosk=$routeParams.kiosk //menu button
 kiosk=$routeParams.kiosk //failsafe return
@@ -101,7 +101,7 @@ $scope.show_menu=app_settings.hide_menu
 	$scope.museum_object = museum_object.get({museum_objectId: $routeParams.museum_objectId},$scope.kiosk, function(museum_object) {
 									
 										if(museum_object.video){
-										$('#videobox').show()
+										$('#videobox').removeClass("hideME")
 										}
 										
 										
