@@ -41,7 +41,7 @@ $scope.show_menu=app_settings.hide_menu
 				
 				
 	  	$scope.killsound = function () {
-				
+				$('audio')[0].volume=0
 				 var videoElement = $('iframe').contents().find("video").get(0)
 				videoElement.volume =0
 									
