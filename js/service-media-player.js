@@ -51,6 +51,7 @@ museum_objectcatServices.factory('media_player', ['$http', function ($http) {
 														$('.volume').show()
 												}
 												if(museum_object.audio) {
+												
 														var audiohtml='<div data-img:"'+dir+'/assets/' + museum_object.images[0].image + '_detail.jpg">';
 														audiohtml+='<audio id="audioplayer" class="audioControls"  >';
 														audiohtml+='<source src="'+dir+'assets/audio/'+museum_object.audio[0].video+'.'+museum_object.audio[0].filetype+'">';
@@ -87,12 +88,17 @@ museum_objectcatServices.factory('media_player', ['$http', function ($http) {
 								data.data=(datax );
 							$(function() {	
 								 fotorama =$('#'+museum_object.id+"_fotorama").data('fotorama');
-								 
+						if($('#'+museum_object.id+"_fotorama").data('fotorama')){		 
 						$('#'+museum_object.id+"_fotorama").data('fotorama').destroy()
-								fotorama.load(datax);
+							fotorama.load(datax);
 								console.log('fotorama datax',datax)
 								fotorama.playVideo()
+						}
+							
 								$('audio').attr("autoplay","");
+								if(museum_object.audio) {
+								$('.volume').show()
+								}
 								
 							})
 							
