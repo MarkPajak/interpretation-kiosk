@@ -1,9 +1,48 @@
 <style>
+.action_button_top button{
+    position: fixed;
+    font-family: 'AmericanTypewriterStd-Med';
+    text-align: center;
+    background: thite;
+    background-color: #4A9C9B;
+    bottom: -777px;
+    z-index: 600;
 
+    font-size: 30px;
+    height: 60px;
+    bottom: 200px;
+    left: 100px;
+}
+.action_button_bottom button{
+    position: fixed;
+    font-family: 'AmericanTypewriterStd-Med';
+    text-align: center;
+    background: thite;
+    background-color: #4A9C9B;
+    z-index: 600;
+    font-size: 30px;
+    height: 60px;
+    bottom: 100px;
+    left: 100px;
+}
 </style>
-<div class=" feedbackButtons  ">
-  <div class="panel-body">
-
+<div class="feedbackButtons">
+<div class="panel-body">
 <button    style="{{functionThatReturnsStyle()}}" id="childlinks"  ng-click="go('/feedback');screensaverOff()"  class="hvr-grow btn btn-primary btn-lg">Rate this display</button>
-  </div>
 </div>
+</div>
+
+<div class="action_button_top">
+<div class="panel-body">
+<button    style="{{functionThatReturnsStyle()}}" id="childlinks"  ng-click="go('/grid/stories');screensaverOff()"  class="hvr-grow btn btn-primary btn-lg">Show me stories</button>
+</div>
+</div>
+
+<div class="action_button_bottom">
+<div class="panel-body">
+<button    style="{{functionThatReturnsStyle()}}" id="childlinks"  ng-click="go('/grid/objects');screensaverOff()"  class="hvr-grow btn btn-primary btn-lg">Show me objects</button>
+</div>
+</div>
+
+
+
