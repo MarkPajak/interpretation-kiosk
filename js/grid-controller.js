@@ -101,7 +101,7 @@ $scope.changeheadingcolor = function() {
 	  
 		 objectsloaded_in_current_batch=0;
 		 		$scope.go = function ( path ) {
-																
+					
 																  var page = {           
 																	page_id:"1234",
 																	page_name: path,
@@ -110,11 +110,20 @@ $scope.changeheadingcolor = function() {
 																	kiosk: app_settings.kiosk
 																};
 																
+													 if(path>0){
+							$location.path( "id/"+ path +"/"+$routeParams.kiosk);
+							detect_dragging.drag_handler()
+							 }else
+							{
+								$location.path(  path +"/"+$routeParams.kiosk);
+							}
+			
+															
 																
 															
 																//send_data.add_log(page)
+												
 																
-																	$location.path(path);
 																	
 																};
 		 		$scope.go_home = function ( path ) {
@@ -128,7 +137,7 @@ $scope.changeheadingcolor = function() {
 																};
 																
 																
-															
+						
 																//send_data.add_log(page)
 																
 																	$location.path($scope.kiosk_path);
