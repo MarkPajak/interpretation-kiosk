@@ -100,6 +100,7 @@ $scope.changeheadingcolor = function() {
 	  }
 	  
 		 objectsloaded_in_current_batch=0;
+	
 		 		$scope.go = function ( path ) {
 					
 																  var page = {           
@@ -110,13 +111,16 @@ $scope.changeheadingcolor = function() {
 																	kiosk: app_settings.kiosk
 																};
 																
-													 if(path>0){
+							
+						   if( $rootScope.isDragging==false){
+							 if(path>0){
 							$location.path( "id/"+ path +"/"+$routeParams.kiosk);
 							detect_dragging.drag_handler()
 							 }else
 							{
 								$location.path(  path +"/"+$routeParams.kiosk);
 							}
+						   }
 			
 															
 																
