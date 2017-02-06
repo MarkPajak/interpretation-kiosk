@@ -48,7 +48,8 @@ console.log('start screensaver')
 screen_saver_loop.start_screen_saver();
 }
 				
-
+	  
+ $scope.menu=app_settings.menu
 					
   var vm = this;
   
