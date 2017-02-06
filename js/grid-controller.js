@@ -66,7 +66,7 @@ $scope.changeheadingcolor = function() {
 	$scope.galleries = gallery_list.query_index();
 	$scope.location="Find out more about the objects in this gallery..."
 	$scope.orderProp = 'age';
-    $scope.listType = 'people';
+    $scope.listType =$routeParams.type;
     $scope.labels="labels";
 	 $scope.directory=dir
 	 $scope.$watch('artist', function(newValue, oldValue) {
