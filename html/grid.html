@@ -23,7 +23,7 @@
              ag-infinite-scroll="vm.loadMoreShots()"
              >
           <div class="card" ng-repeat="shot in vm.shots track by $index">
-		  <a  style="{{changeheadingcolor()}}"   ng-click="screensaverOff();go(shot.id)"  >
+		  <a  style="{{changeheadingcolor()}}"   ng-click="screensaverOff();go(shot.id)" >>
             <div class="img hvr-grow" style="background-image: url({{::shot.images.normal}});"></div>
             <div class="inside">
               <h3>{{::shot.title}}</h3>
