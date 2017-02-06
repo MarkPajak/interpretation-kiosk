@@ -100,8 +100,24 @@ $scope.changeheadingcolor = function() {
 	  }
 	  
 		 objectsloaded_in_current_batch=0;
-		 
 		 		$scope.go = function ( path ) {
+																
+																  var page = {           
+																	page_id:"1234",
+																	page_name: path,
+																	page_type:'button click',
+																	kiosk_id:$routeParams.kiosk,
+																	kiosk: app_settings.kiosk
+																};
+																
+																
+															
+																//send_data.add_log(page)
+																
+																	$location.path(path);
+																	
+																};
+		 		$scope.go_home = function ( path ) {
 																
 																  var page = {           
 																	page_id:"1234",
