@@ -15,10 +15,11 @@ function($scope, $http, $q,$routeParams,museum_object_index,
 										artist_list,
 										gallery_list,
 										$debounce,
-										productService,  $location, $interval,$rootScope,screen_saver_loop,detect_dragging,app_settings,app_functons) {
+										productService,  $location, $interval,$rootScope,screen_saver_loop,detect_dragging,app_settings,app_functons,send_data) {
   var vm = this;
   
-  
+  $scope.kiosk_path=$routeParams.kiosk
+$scope.menu=app_settings.menu
 $scope.pageClass = 'page-grid';
 $scope.kiosk=$routeParams.kiosk
 $scope.call_to_action=app_settings.call_to_action
@@ -38,8 +39,6 @@ $scope.changeheadingcolor = function() {
 
 
 
-
-	    
 		
 		
 
@@ -58,13 +57,9 @@ $scope.changeheadingcolor = function() {
 						 console.log('start screensaver')
 					   screen_saver_loop.start_screen_saver();
 					  }
-   $scope.go = function ( path ) {
-	 
-	   if( $rootScope.isDragging==false){
-		$location.path( "id/"+ path +"/"+$scope.kiosk);
-		detect_dragging.drag_handler()
-	   }
-	};
+
+							
+	    
   
   vm.loadingMore = false;
   	$scope.artists = artist_list.query_index();
@@ -106,7 +101,23 @@ $scope.changeheadingcolor = function() {
 	  
 		 objectsloaded_in_current_batch=0;
 		 
-		 
+		 		$scope.go = function ( path ) {
+																
+																  var page = {           
+																	page_id:"1234",
+																	page_name: path,
+																	page_type:'button click',
+																	kiosk_id:$routeParams.kiosk,
+																	kiosk: app_settings.kiosk
+																};
+																
+																
+															
+																//send_data.add_log(page)
+																
+																	$location.path($scope.kiosk_path);
+																	
+																};
 		 angular.forEach(museum_objects , function(object, key) {
 	
 	if(museum_objects.length==0){alert('o')}
