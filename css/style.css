@@ -1,6 +1,11 @@
 
 /* BASE STYLES
 ============================================================================= */
+html, body {
+    height: 100%;
+    background: #868F94 !important;
+}
+
 
 label {
     display: inline-block;
