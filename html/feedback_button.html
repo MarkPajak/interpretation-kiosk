@@ -34,13 +34,13 @@
 
 <div class="action_button_top  ">
 <div class="panel-body">
-<button    style="{{functionThatReturnsStyle()}}" id="childlinks"  ng-click="go('/grid/stories');screensaverOff()"  class="hvr-grow btn btn-primary btn-lg">Show me stories</button>
+<button    ng-hide="{{menu.hide_stories_button}}" style="{{functionThatReturnsStyle()}}" id="childlinks"  ng-click="go('/grid/stories');screensaverOff()"  class="hvr-grow btn btn-primary btn-lg">Show me stories</button>
 </div>
 </div>
 
 <div class="action_button_bottom">
 <div class="panel-body">
-<button    style="{{functionThatReturnsStyle()}}" id="childlinks"  ng-click="go('/grid/objects');screensaverOff()"  class="hvr-grow btn btn-primary btn-lg">Show me objects</button>
+<button     ng-hide="{{menu.hide_objects_button}}"  style="{{functionThatReturnsStyle()}}" id="childlinks"  ng-click="go('/grid/objects');screensaverOff()"  class="hvr-grow btn btn-primary btn-lg">Show me objects</button>
 </div>
 </div>
 
