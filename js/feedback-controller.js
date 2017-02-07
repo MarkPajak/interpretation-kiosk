@@ -98,17 +98,17 @@ $scope.show_menu=app_settings.hide_menu
 										"value": "satisfied"
 									  },
 									  {
-										"name": "neither satisfied nor disatisfied",
-										"value": "neither satisfied nor disatisfied"
+										"name": "neither satisfied nor dissatisfied",
+										"value": "neither satisfied nor dissatisfied"
 									  },
 									  {
-										"name": "disatisfied",
-										"value": "disatisfied"
+										"name": "dissatisfied",
+										"value": "dissatisfied"
 									  },
 									  {
 									  
-										"name": "very disatisfied",
-										"value": "very disatisfied"
+										"name": "very dissatisfied",
+										"value": "very dissatisfied"
 									  }
                                 ]
 							}
