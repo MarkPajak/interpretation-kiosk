@@ -162,7 +162,7 @@ $location.path( "/"+kiosk );
 	  
 	 return  $resource(dir+'/id/:museum_objectId.json', {} , 
 {
-        'get':    {method:'GET',  params:{museum_objectId:'museum_objectId'}}
+        'get':    {method:'GET',  params:{museum_objectId:'museum_objectId'},interceptor : {responseError : resourceErrorHandler}}
    
 })
 	 /*
