@@ -166,14 +166,15 @@ screen_saver_loop.start_screen_saver();
 	
 
 					
-					//detect_dragging.drag_handler()
+					detect_dragging.drag_handler()
 					   $scope.go = function ( path ) {
 						 
 						   if( $rootScope.isDragging==false){
 							 if(path>0){
-							$location.path( "id/"+ path +"/"+$routeParams.kiosk);
-							detect_dragging.drag_handler()
-							 }else
+								$location.path( "id/"+ path +"/"+$routeParams.kiosk);
+								detect_dragging.drag_handler()
+							 }
+							 else
 							{
 								$location.path(  path +"/"+$routeParams.kiosk);
 							}
