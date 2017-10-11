@@ -95,7 +95,7 @@ background-color:white;
 <script>
 $(document).scrollTop(0);
 </script>
-
+<div id="content-scroller" >
 <div class="container marketing hideME"  id="videobox">
  
   <div class="featurette">
@@ -208,7 +208,7 @@ $(document).scrollTop(0);
 	</div>
 
 
-	</div>
+
 
 <div  class="container" ng-show="museum_object.child[0]" >
  <h2>Read More about this:<h2>
@@ -236,6 +236,8 @@ $(document).scrollTop(0);
 </div>
 </div>
 
+  </div>
+  
 
 
  <!-- Footer -->
@@ -251,6 +253,12 @@ $(document).scrollTop(0);
   </div>
  </md-toolbar>
 
-
+   <script>
+  $( function() {
+ 
+    $( "#content-scroller" ).draggable( {axis: "y"});
+  } );
+  </script>
+ 
 
  
