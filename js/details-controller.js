@@ -179,14 +179,19 @@ $scope.show_menu=app_settings.hide_menu
 																 $location.path( '/slideshow/ids/'+museum_object.id );
 																};
 												$scope.log_page_view(museum_object)
-												//return false
+												
 												
 											})
 											
 												console.log($scope.museum_object)
 									
-
-									
+										
+										$scope.apply_draggable = function () {
+											  $( function() {												  
+													setTimeout(function(){	$( "#content-scroller" ).draggable( {axis: "y"}); }, 2500);
+												 } );
+											  }
+																				
 									
 								
 									
