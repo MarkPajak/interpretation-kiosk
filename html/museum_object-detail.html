@@ -136,7 +136,7 @@ $(document).scrollTop(0);
 		ng-repeat="img in museum_object.images"
 		ng-class="{active: mainImageUrl==img.image}" ><div  style="{{video_button_style()}}" />
 
-    <h2 class="featurette-heading">{{museum_object.name}}</h2><span ng-hide="museum_object.summary==null" class="text-muted"><h3>"{{museum_object.summary}}"</h3></span>
+    <h2  ng-init="apply_draggable()" class="featurette-heading">{{museum_object.name}}</h2><span ng-hide="museum_object.summary==null" class="text-muted"><h3>"{{museum_object.summary}}"</h3></span>
 		<div  ng-repeat="artist in museum_object.artists" class="featurette" id="about">	
 		<p class="featurette-heading">{{artist.name}} 	</p>
 		<p ng-if="artist.birth && artist.birth " class="lead angular-with-newlines">birth {{artist.birth}}, death {{artist.death}}	</p>
