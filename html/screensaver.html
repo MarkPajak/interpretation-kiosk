@@ -3,7 +3,7 @@
 <div  ng-hide="screensaver_on" ng-hide="currentPath === '/'"  ng-include="'html/menu.html'"></div>
 <div  ng-hide="" ng-hide="currentPath === '/'"  ng-include="'html/call_to_action.html'"></div>	
 
-  <md-content id="content-scroller">
+  <md-content id="content-scroller" ng-init="apply_draggable()">
 
     <div>
         <div
