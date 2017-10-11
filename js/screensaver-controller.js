@@ -48,7 +48,14 @@ console.log('start screensaver')
 screen_saver_loop.start_screen_saver();
 }
 				
-	  
+	    $scope.apply_draggable = function () {
+											
+											  $( function() {												  
+													setTimeout(function(){	$( "#content-scroller" ).draggable( {axis: "y"}); }, 2500);
+												 } );
+											 }
+											 
+											 
  $scope.menu=app_settings.menu
 					
   var vm = this;
@@ -159,7 +166,7 @@ screen_saver_loop.start_screen_saver();
 	
 
 					
-					detect_dragging.drag_handler()
+					//detect_dragging.drag_handler()
 					   $scope.go = function ( path ) {
 						 
 						   if( $rootScope.isDragging==false){
