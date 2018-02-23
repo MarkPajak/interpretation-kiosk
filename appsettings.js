@@ -1,5 +1,5 @@
 
-kiosk="TEST-KIOSK"
+kiosk="TEST KIOSK"
 
 museum_objectcatServices.factory('app_settings', ['$http', function ($http) {
 
@@ -14,8 +14,8 @@ museum_objectcatServices.factory('app_settings', ['$http', function ($http) {
 	menu.hide_slideshow_button= true
 	menu.hide_feedback_button= true
 	screensaver=['1','']
-	kiosk="TEST-KIOSK"
-	call_to_action="Select a picture to hear a story."
+	kiosk="Profiteers"
+	call_to_action="Select a picture to find out more."
 	 var app_settings = {'hide_menu':true,'menu':menu,'call_to_action':call_to_action,'kiosk':kiosk,screensaver:screensaver};
 	
 	
@@ -25,16 +25,17 @@ museum_objectcatServices.factory('app_settings', ['$http', function ($http) {
 
 
 
+
 function app_start_log(kiosk,ACTION){
 	
-	var urlBase =  'http://markpajak.co.uk/mark/kiosk-feedback/user_analytics.php';
+	var urlBase = 'http://performance.bristolmuseums.org.uk/feedback/new'
     var StudentDataOp = {};
 	
 	var page = {           
 				page_id: "1234",
 				page_name: ACTION,
 				page_type:"AUTO",
-				kiosk_id:"kiosk_id",
+				kiosk_id:"PPL-TS-ICT01",
 				kiosk: kiosk,
 				app_type:"INTERPRETATION-KIOSK"
 				};
