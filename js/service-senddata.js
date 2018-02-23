@@ -19,7 +19,7 @@ museum_objectcatServices.factory('send_data', ['$http', function ($http) {
 
 		return $.ajax({
 	   type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-            url         : 'http://performance.bristolmuseums.org.uk/analytics/new', // the url where we want to POST
+            url         : 'https://performance.bristolmuseums.org.uk/analytics/new', // the url where we want to POST
             data        : page, // our data object
             dataType    : 'jsonp', // what type of data do we expect back from the server	
 
