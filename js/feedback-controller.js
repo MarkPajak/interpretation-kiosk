@@ -196,18 +196,23 @@ $scope.show_menu=app_settings.hide_menu
       formData=(vm.model);
 	 
 	  
-	  if(formData.satisfaction ||formData.description!=""){
+	 if(formData.satisfaction ||formData.description!=""){
 	  
 	    $.ajax({
             type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-            url         : 'http://markpajak.co.uk/mark/kiosk-feedback/logger.php', // the url where we want to POST
+            url         : 'http://performance.bristolmuseums.org.uk/feedback/new', // the url where we want to POST
             data        : formData, // our data object
-            dataType    : 'json', // what type of data do we expect back from the server
+            dataType    : 'jsonp', // what type of data do we expect back from the server
              encode          : true,
 			  success: function(data) {
         	
                
-    }
+    },	  error: function(error) {
+        //	alert(JSON.stringify(error))
+			vm.options.resetModel()
+			$scope.go('/'+$routeParams.kiosk)
+               
+    },
         }).done(function(data) { console.log('suvccess')
 				vm.options.resetModel()
   $scope.go('/'+$routeParams.kiosk)})
