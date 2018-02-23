@@ -200,7 +200,7 @@ $scope.show_menu=app_settings.hide_menu
 	  
 	    $.ajax({
             type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-            url         : 'http://performance.bristolmuseums.org.uk/feedback/new', // the url where we want to POST
+            url         : 'https://performance.bristolmuseums.org.uk/feedback/new', // the url where we want to POST
             data        : formData, // our data object
             dataType    : 'jsonp', // what type of data do we expect back from the server
              encode          : true,
