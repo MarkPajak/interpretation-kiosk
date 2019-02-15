@@ -56,12 +56,16 @@ detect_dragging.drag_handler= function(){
 	
     if(evt.pageX+ evt.pageY==currentPos[0]+currentPos[1]){
 			console.log('clicking')
-       $rootScope.isDragging = false;
+      
+	
 	}
     else
 	{
       $rootScope.isDragging = true;
 		console.log('dragging')
+		   setTimeout(function(){
+	   $rootScope.isDragging = false;
+	   }, 2500);
 	}
  $('md-content').off('mouseup', handler);
  
