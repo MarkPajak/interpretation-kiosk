@@ -24,6 +24,19 @@ $scope.pageClass = 'page-grid';
 $scope.kiosk=$routeParams.kiosk
 $scope.call_to_action=app_settings.call_to_action
 kiosk_path=$routeParams.kiosk
+
+
+
+	  var page = {           
+																	page_id:"1234",
+																	page_name: $routeParams.type,
+																	page_type:'button click',
+																	kiosk_id:$routeParams.kiosk,
+																	kiosk: app_settings.kiosk
+																};
+											console.log('clicked',page)							
+
+
 $scope.start_screen_saver = function () {
 	 screen_saver_loop.start_screen_saver()
 		
@@ -139,7 +152,7 @@ $scope.changeheadingcolor = function() {
 						   }
 			
 															
-																
+														
 															
 																//send_data.add_log(page)
 												
