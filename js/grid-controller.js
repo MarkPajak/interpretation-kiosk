@@ -8,7 +8,7 @@ museum_objectcatControllers.controller('gridCtrl',
 										'museum_object_index','image_feed',
 										'museum_objects_by_artist',
 										'artist_list','gallery_list',
-										'$debounce','productService','$location','$interval','$rootScope','screen_saver_loop','detect_dragging','app_settings','app_functons',
+										'$debounce','productService','$location','$interval','$rootScope','screen_saver_loop','detect_dragging','app_settings','app_functons','send_data',
 function($scope, $http, $q,$routeParams,museum_object_index,
 										image_feed,
 										museum_objects_by_artist,
@@ -17,7 +17,7 @@ function($scope, $http, $q,$routeParams,museum_object_index,
 										$debounce,
 										productService,  $location, $interval,$rootScope,screen_saver_loop,detect_dragging,app_settings,app_functons,send_data) {
   var vm = this;
-  
+  console.log('leaded',page)		
   $scope.kiosk_path=$routeParams.kiosk
 $scope.menu=app_settings.menu
 $scope.pageClass = 'page-grid';
@@ -34,8 +34,8 @@ kiosk_path=$routeParams.kiosk
 																	kiosk_id:$routeParams.kiosk,
 																	kiosk: app_settings.kiosk
 																};
-											console.log('clicked',page)							
-
+																
+send_data.add_log(page)
 
 $scope.start_screen_saver = function () {
 	 screen_saver_loop.start_screen_saver()
