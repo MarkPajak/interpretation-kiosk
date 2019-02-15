@@ -1,10 +1,10 @@
 
-<div class=" menuButtons  panel-default" ng-controller="gridCtrl">
+<div class=" menuButtons  panel-default">
   <div class="panel-body">
 <button    style="{{functionThatReturnsStyle()}}"  ng-click="go_home(''); screensaverOff();" "  class="fixbutton hvr-grow btn btn-primary btn-lg"><img class="icon" src="img/back_arrow.png"/> </button>
 </div>
 </div>
-<div  ng-click="screensaverOff()" ng-controller="gridCtrl as vm" ng-cloak="" ng-app="app" layout="column" layout-fill>
+<div  ng-click="screensaverOff()"  ng-cloak="" ng-app="app" layout="column" layout-fill>
 <div  ng-hide="screensaver_on" ng-hide="currentPath === '/'"  ng-include="'html/menu.html'"></div>
 	
 	
