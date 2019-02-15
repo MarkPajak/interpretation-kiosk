@@ -85,8 +85,8 @@ animateApp.config(['$routeProvider',
         controller: 'timelineCtrl'
       }).
 	    when('/grid/:type/:kiosk', {
-         templateUrl: 'html/grid.html'//,
-       // controller: 'gridCtrl'
+         templateUrl: 'html/grid.html',
+        controller: 'gridCtrl as vm'
       }).	  
 	    when('/:kiosk', {
          templateUrl: 'html/screensaver.html',
