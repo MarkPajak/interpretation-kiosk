@@ -1,6 +1,13 @@
 /* app css stylesheet */
 /* @import must be at top of file, otherwise CSS will not work */
 /* Grow Rotate */
+
+.angular-grid > * {
+    opacity: 1 !important;
+}
+
+
+
 .hvr-grow-rotate {
   display: inline-block;
   vertical-align: middle;
