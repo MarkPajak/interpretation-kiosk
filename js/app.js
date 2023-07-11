@@ -93,7 +93,8 @@ animateApp.config(['$routeProvider',
         controller: 'screen_saver'
       }).
 	  when('/feedback/:kiosk', {
-         templateUrl: 'html/page-feedback.html',
+         //templateUrl: 'html/page-feedback.html',
+         templateUrl: 'html/asteroids/asteroids.html',
         controller: 'feedbackCtrl'
       }).
 	   when('/:kiosk', {
